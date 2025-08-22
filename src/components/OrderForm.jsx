@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Form() {
+function OrderForm() {
     return (
         <div>
 
@@ -16,4 +16,4 @@ function Form() {
     )
 }
 
-export default Form
+export default OrderForm
