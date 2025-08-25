@@ -15,6 +15,10 @@ function OrderForm() {
         name: "",
         quantity: 1
     });
+    const history = useHistory();
+    const hClick = () => {
+        history.push("/lastStage");
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -59,6 +63,8 @@ function OrderForm() {
         }
     };
 
+
+
     return (
 
         <div>
@@ -69,8 +75,8 @@ function OrderForm() {
                         <h1>Teknolojik yemekler</h1>
                         <nav>
                             <Link to="/">Anasayfa</Link>-
-                            <Link to="/secenekler">Seçenekler</Link>-
-                            <Link to="/siparis-olustur">Sipariş Oluştur</Link>
+                            <Link to="/lastStage">Seçenekler</Link>-
+                            <Link to="/orderFormSonuc">Sipariş Oluştur</Link>
                         </nav>
                     </div>
                 </header>
@@ -248,6 +254,7 @@ function OrderForm() {
                         <p>Seçimler <span>25.00₺</span></p>
                         <p style={{ color: "red" }}>Toplam <span>110.00₺</span></p>
                         <Button
+                            onClick={hClick}
                             data-cy="submit-button"
                             type='submit'
                             color="warning"

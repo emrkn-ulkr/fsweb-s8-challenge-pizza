@@ -7,7 +7,7 @@ function AnaSayfa() {
 
     const history = useHistory();
     const handleClick = () => {
-        history.push("/siparis-olustur")
+        history.push("/orderFormSonuc")
     }
     return (
         <div className='AnaSayfa-div'
