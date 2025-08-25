@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Button, ButtonGroup, FormFeedback, FormGroup, Label } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
@@ -32,9 +32,9 @@ function OrderForm() {
                 }
             );
 
-            console.log("✅ Sipariş Özeti:", response.data);
+            console.log("Sipariş Özeti:", response.data);
         } catch (error) {
-            console.error("❌ Sipariş gönderilemedi:", error);
+            console.error("Sipariş gönderilemedi:", error);
         }
     };
 
@@ -68,9 +68,9 @@ function OrderForm() {
                     <div>
                         <h1>Teknolojik yemekler</h1>
                         <nav>
-                            <Link>Anasayfa</Link>-
-                            <Link>Seçenekler</Link>-
-                            <Link>Sipariş Oluştur</Link>
+                            <Link to="/">Anasayfa</Link>-
+                            <Link to="/secenekler">Seçenekler</Link>-
+                            <Link to="/siparis-olustur">Sipariş Oluştur</Link>
                         </nav>
                     </div>
                 </header>
