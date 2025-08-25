@@ -164,10 +164,7 @@ function OrderForm() {
                                 }}
                             >
                                 {foodsOption.map((foodsOp) => (
-                                    <label
-                                        key={foodsOp}
-                                        style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
-                                    >
+                                    <label data-cy={`food-${foodsOp}`}>
                                         <input
                                             type="checkbox"
                                             checked={selected.includes(foodsOp)}
@@ -251,6 +248,7 @@ function OrderForm() {
                         <p>Seçimler <span>25.00₺</span></p>
                         <p style={{ color: "red" }}>Toplam <span>110.00₺</span></p>
                         <Button
+                            data-cy="submit-button"
                             type='submit'
                             color="warning"
                             disabled={
