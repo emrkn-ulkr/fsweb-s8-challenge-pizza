@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { Button, ButtonGroup, FormFeedback, FormGroup, Label } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 
 function OrderForm() {
 
@@ -14,6 +15,30 @@ function OrderForm() {
         name: "",
         quantity: 1
     });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post(
+                "https://reqres.in/api/pizza",
+                {
+                    ...formData,
+                    toppings: selected
+                },
+                {
+                    headers: {
+                        "x-api-key": "reqres-free-v1"
+                    }
+                }
+            );
+
+            console.log("✅ Sipariş Özeti:", response.data);
+        } catch (error) {
+            console.error("❌ Sipariş gönderilemedi:", error);
+        }
+    };
+
+
 
     const foodsOption = [
         "Pepperoni", "Domates", "Biber", "Sosis", "Mısır",
@@ -37,7 +62,7 @@ function OrderForm() {
     return (
 
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
 
                 <header>
                     <div>
@@ -226,6 +251,7 @@ function OrderForm() {
                         <p>Seçimler <span>25.00₺</span></p>
                         <p style={{ color: "red" }}>Toplam <span>110.00₺</span></p>
                         <Button
+                            type='submit'
                             color="warning"
                             disabled={
                                 formData.size === "" ||
