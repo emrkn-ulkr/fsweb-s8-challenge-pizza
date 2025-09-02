@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Button, ButtonGroup, FormFeedback, FormGroup, Label } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+import { hover } from '@testing-library/user-event/dist/cjs/convenience/hover.js';
 
 function OrderForm() {
 
@@ -70,26 +71,30 @@ function OrderForm() {
         <div>
             <form onSubmit={handleSubmit}>
 
-                <header>
+                <header className='header-div'>
                     <div>
                         <h1>Teknolojik yemekler</h1>
-                        <nav>
-                            <Link to="/">Anasayfa</Link>-
-                            <Link to="/lastStage">Seçenekler</Link>-
-                            <Link to="/orderFormSonuc">Sipariş Oluştur</Link>
-                        </nav>
+                        <div style={{ background: "#fbf0eb" }}>
+                            <img className='image-banner-h1' src='images/iteration-2-images/pictures/form-banner.png' />
+                            <nav>
+                                <Link style={{ color: "gray" }} to="/">Anasayfa</Link>-
+                                <Link style={{ color: "gray" }} to="/lastStage">Seçenekler</Link>-
+                                <Link style={{ color: "gray" }} to="/orderFormSonuc">Sipariş Oluştur</Link>
+                            </nav>
+                        </div>
                     </div>
                 </header>
 
                 <main>
-                    <div>
-                        <h2>
-                            Position Absolute Acı Pizza <span>4.9</span> <span>(200)</span>
-                        </h2>
-                        <p>
-                            Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,domates,peynir ve genellikle çeşitli diğer malzemelerle kaplanmış , daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen , genellikle yuvarlak , düzleştirilmiş mayalı buğday bazlı hamurdan oluşan italyan kökenli lezzetli bir yemektir.. Küçük pizzaya bazen pizzetta denir.
-                        </p>
-
+                    <div >
+                        <div style={{ marginTop: "170px", background: "#fbf0eb" }}>
+                            <h2>
+                                Position Absolute Acı Pizza
+                            </h2><span style={{ fontWeight: "bold", fontSize: "25px", marginRight: "200px" }}>85.00₺</span> <span style={{ marginRight: "80px" }}>4.9</span> <span>(200)</span>
+                            <p>
+                                Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza,domates,peynir ve genellikle çeşitli diğer malzemelerle kaplanmış , daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen , genellikle yuvarlak , düzleştirilmiş mayalı buğday bazlı hamurdan oluşan italyan kökenli lezzetli bir yemektir.. Küçük pizzaya bazen pizzetta denir.
+                            </p>
+                        </div>
                         <div>
                             <h3>Boyut Seç<span style={{ color: "red" }}>*</span></h3>
 
