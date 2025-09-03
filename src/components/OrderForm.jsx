@@ -68,7 +68,7 @@ function OrderForm() {
 
     return (
 
-        <div>
+        <div className='body-order-form'>
             <form onSubmit={handleSubmit}>
 
                 <header className='header-div'>
