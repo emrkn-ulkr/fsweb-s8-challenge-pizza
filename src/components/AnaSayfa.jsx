@@ -42,6 +42,7 @@ function AnaSayfa() {
                         pill
                         id="YeniKore"
                     >
+                        <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Yeni Kore
                     </Badge>
 
@@ -49,6 +50,7 @@ function AnaSayfa() {
                         color="white"
                         pill
                         id="Pizza">
+                        <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" />
                         Pizza
                     </Badge>
 
@@ -57,6 +59,7 @@ function AnaSayfa() {
                         pill
                         id="Burger"
                     >
+                        <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" />
                         Burger
                     </Badge>
 
@@ -65,6 +68,7 @@ function AnaSayfa() {
                         pill
                         id="Kızartmalar"
                     >
+                        <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" />
                         Kızartmalar
                     </Badge>
 
@@ -73,6 +77,7 @@ function AnaSayfa() {
                         pill
                         id="FastFood"
                     >
+                        <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" />
                         Fast food
                     </Badge>
 
@@ -81,6 +86,7 @@ function AnaSayfa() {
                         pill
                         id="Gazlıİçecek"
                     >
+                        <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
                         Gazlı İçecek
                     </Badge>
                 </div>
