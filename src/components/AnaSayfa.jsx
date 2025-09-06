@@ -37,7 +37,7 @@ function AnaSayfa() {
             </div>
             <div className='homePage-buttons'>
                 <div>
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="YeniKore"
@@ -46,47 +46,47 @@ function AnaSayfa() {
                         Yeni Kore
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="Pizza">
-                        <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" />
+                        <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Pizza
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="Burger"
                     >
-                        <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" />
+                        <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Burger
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="Kızartmalar"
                     >
-                        <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" />
+                        <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Kızartmalar
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="FastFood"
                     >
-                        <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" />
+                        <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Fast food
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
                         pill
                         id="Gazlıİçecek"
                     >
-                        <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
+                        <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
                         Gazlı İçecek
                     </Badge>
                 </div>
