@@ -12,8 +12,6 @@ function AnaSayfa() {
     return (
         <div>
             <header>
-
-
                 <div className='AnaSayfa-div'
                     style={{
                         backgroundImage: `url(${homeBanners})`,
@@ -27,72 +25,75 @@ function AnaSayfa() {
                         alignItems: "center",
                         color: "white",
                         textAlign: "center"
-                    }}
-                >
+                    }}>
                     <Button
                         onClick={handleClick}
                         color="warning"
-                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "5px", marginBottom: "175px", width: "250px", borderRadius: "15px" }}
-                    >
+                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "5px", marginBottom: "175px", width: "250px", borderRadius: "15px" }}>
                         ACIKTIM
                     </Button>
                 </div>
             </header>
-            <div className='home-Icons-buttons'>
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="YeniKore"
-                >
-                    <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Yeni Kore
-                </Badge>
+            <br />
+            <br />
+            <main>
+                <div className='home-Icons-buttons'>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="YeniKore">
+                        <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Yeni Kore
+                    </Badge>
 
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="Pizza">
-                    <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Pizza
-                </Badge>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="Pizza">
+                        <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Pizza
+                    </Badge>
 
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="Burger"
-                >
-                    <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Burger
-                </Badge>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="Burger">
+                        <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Burger
+                    </Badge>
 
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="Kızartmalar"
-                >
-                    <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Kızartmalar
-                </Badge>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="Kızartmalar">
+                        <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Kızartmalar
+                    </Badge>
 
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="FastFood"
-                >
-                    <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Fast food
-                </Badge>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="FastFood">
+                        <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Fast food
+                    </Badge>
 
-                <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
-                    color="white"
-                    pill
-                    id="Gazlıİçecek"
-                >
-                    <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                    Gazlı İçecek
-                </Badge>
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                        color="white"
+                        pill
+                        id="Gazlıİçecek">
+                        <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                        Gazlı İçecek
+                    </Badge>
+                </div>
+            </main>
+            <br />
+            <br />
+            <div >
+                <div>ilk sol</div>
+                <div>sağ üst</div>
+                <div>sağ alt</div>
             </div>
-
         </div>
 
     )
