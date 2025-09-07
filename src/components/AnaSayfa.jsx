@@ -2,6 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Badge, Button } from 'reactstrap'
 import homeBanners from "/images/iteration-1-images/Homesss.png";
+import { pointer } from '@testing-library/user-event/dist/cjs/pointer/index.js';
 
 function AnaSayfa() {
 
@@ -38,52 +39,63 @@ function AnaSayfa() {
             <br />
             <main style={{ backgroundColor: "#fffff9" }}>
                 <div className='home-Icons-buttons'>
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="YeniKore">
                         <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Yeni Kore
+                        <button className='badge-button'>Yeni Kore</button>
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="Pizza">
                         <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Pizza
+                        <button className='badge-button'>
+                            Pizza
+                        </button>
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="Burger">
                         <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Burger
+                        <button className='badge-button'>
+                            Burger
+                        </button>
+
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="Kızartmalar">
                         <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Kızartmalar
+                        <button className='badge-button'>
+                            Kızartmalar
+                        </button>
+
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="FastFood">
                         <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Fast food
+                        <button className='badge-button'>
+                            Fast food
+                        </button>
+
                     </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
+                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
                         color="white"
                         pill
                         id="Gazlıİçecek">
                         <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        Gazlı İçecek
+                        <button className='badge-button'>Gazlı İçecek</button>
                     </Badge>
                 </div>
                 <br />

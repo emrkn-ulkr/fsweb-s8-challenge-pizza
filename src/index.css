@@ -64,6 +64,12 @@
   color: red;
 }
 
+.badge-button {
+  border: none;
+  background-color: #fffff9;
+  font-weight: bold;
+}
+
 .menu-left {
   width: 600px;
   height: 400px;
