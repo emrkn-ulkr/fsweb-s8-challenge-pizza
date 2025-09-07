@@ -120,7 +120,9 @@ function AnaSayfa() {
                         </article>
                     </article>
                 </section>
-                <section className='menu-container-second'>
+                <br />
+                <br />
+                <br />
 
                 <section className='menu-container-second'>
                     <header>
@@ -133,8 +135,6 @@ function AnaSayfa() {
                     </header>
                     <br />
                 </section>
-
-
             </main>
 
 
