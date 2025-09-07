@@ -70,6 +70,11 @@
   font-weight: bold;
 }
 
+.badge-button:hover {
+  color: red;
+}
+
+
 .menu-left {
   width: 600px;
   height: 400px;
@@ -121,4 +126,26 @@
   text-align: left;
   padding-left: 30px;
   padding-top: 30px;
+}
+
+.container-2-button {
+  border: none;
+  background-color: #fffff9;
+  font-weight: bold;
+  width: 180px;
+  height: 70px;
+  font-size: 15px;
+}
+
+.container-2-button:hover {
+  background-color: rgb(68, 68, 68);
+  border-radius: 15px;
+}
+
+.container-2-navbar {
+  display: flex;
+  height: 55px;
+  gap: 25px;
+  justify-content: center;
+  flex-direction: row;
 }

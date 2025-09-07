@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Badge, Button } from 'reactstrap'
 import homeBanners from "/images/iteration-1-images/Homesss.png";
 import { pointer } from '@testing-library/user-event/dist/cjs/pointer/index.js';
 
 function AnaSayfa() {
-
+    const [yemekler, setYemekler] = useState([
+        { isim: "Ramen", siparis: 12, icon: "../images/iteration-2-images/icons/1.svg" },
+        { isim: "Pizza", siparis: 15, icon: "../images/iteration-2-images/icons/2.svg" },
+        { isim: "Burger", siparis: 20, icon: "../images/iteration-2-images/icons/3.svg" },
+        { isim: "Kızartmalar", siparis: 10, icon: "../images/iteration-2-images/icons/4.svg" },
+        { isim: "Fast Food", siparis: 5, icon: "../images/iteration-2-images/icons/5.svg" },
+        { isim: "Gazlı İçecek", siparis: 18, icon: "../images/iteration-2-images/icons/6.svg" },
+    ]);
+    const siraliYemekler = [...yemekler].sort((a, b) => b.siparis - a.siparis);
     const history = useHistory();
     const handleClick = () => {
         history.push("/orderFormSonuc")
@@ -123,17 +131,30 @@ function AnaSayfa() {
                 <br />
                 <br />
                 <br />
-
+                <br />
                 <section className='menu-container-second'>
                     <header>
                         <h4 style={{
                             fontFamily: "'Dancing Script', cursive",
                             fontStyle: 'italic',
                             fontWeight: 400, fontStyle: "italic", textAlign: "center", color: "red"
-                        }}>en çok paketlenen menüler</h4>
+                        }}>en çok paketlenen menüler</h4><br />
                         <h3 style={{ textAlign: "center" }}>Acıktıran Kodlara Doyuran Lezzetler</h3>
+
+                        <br />
+
+                        <div className='container-2-navbar'>
+                            {siraliYemekler.map((yemek) => (
+                                <button className='container-2-button' key={yemek.isim} style={{ margin: "5px", padding: "10px" }}>
+                                    <img src={yemek.icon} alt={yemek.isim} style={{ marginRight: "15px" }} />{yemek.isim}
+                                </button>
+                            ))}
+                        </div>
+
                     </header>
+
                     <br />
+
                 </section>
             </main>
 
