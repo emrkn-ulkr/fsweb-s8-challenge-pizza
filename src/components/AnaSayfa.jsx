@@ -122,6 +122,16 @@ function AnaSayfa() {
                 </section>
                 <section className='menu-container-second'>
 
+                <section className='menu-container-second'>
+                    <header>
+                        <h4 style={{
+                            fontFamily: "'Dancing Script', cursive",
+                            fontStyle: 'italic',
+                            fontWeight: 400, fontStyle: "italic", textAlign: "center", color: "red"
+                        }}>en çok paketlenen menüler</h4>
+                        <h3 style={{ textAlign: "center" }}>Acıktıran Kodlara Doyuran Lezzetler</h3>
+                    </header>
+                    <br />
                 </section>
 
 
