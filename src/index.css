@@ -68,10 +68,15 @@
   border: none;
   background-color: #fffff9;
   font-weight: bold;
+  color: black;
+  margin-right: 25px;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
 .badge-button:hover {
   color: red;
+  background-color: rgb(226, 226, 226);
 }
 
 

@@ -48,65 +48,55 @@ function AnaSayfa() {
             <main style={{ backgroundColor: "#fffff9" }}>
                 <nav>
                     <div className='home-Icons-buttons'>
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="YeniKore">
                             <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>Yeni Kore</button>
-                        </Badge>
+                            Yeni Kore
+                        </button>
 
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="Pizza">
                             <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>
-                                Pizza
-                            </button>
-                        </Badge>
+                            Pizza
+                        </button>
 
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="Burger">
                             <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>
-                                Burger
-                            </button>
+                            Burger
+                        </button>
 
-                        </Badge>
-
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="Kızartmalar">
                             <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>
-                                Kızartmalar
-                            </button>
+                            Kızartmalar
+                        </button>
 
-                        </Badge>
-
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="FastFood">
                             <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>
-                                Fast food
-                            </button>
+                            Fast food
+                        </button>
 
-                        </Badge>
-
-                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                        <button className='badge-button'
                             color="white"
                             pill
                             id="Gazlıİçecek">
                             <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                            <button className='badge-button'>Gazlı İçecek</button>
-                        </Badge>
+                            Gazlı İçecek
+                        </button>
                     </div>
+
                 </nav>
                 <br />
                 <br />
