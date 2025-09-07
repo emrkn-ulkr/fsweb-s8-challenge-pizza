@@ -36,7 +36,7 @@ function AnaSayfa() {
             </header>
             <br />
             <br />
-            <main>
+            <main style={{ backgroundColor: "#fffff9" }}>
                 <div className='home-Icons-buttons'>
                     <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px" }}
                         color="white"
@@ -86,15 +86,32 @@ function AnaSayfa() {
                         Gazlı İçecek
                     </Badge>
                 </div>
+                <br />
+                <br />
+                <section class="menu-container">
+                    <article class="menu-left">
+                        <h2>Özel<br /> Lezzetus</h2>
+                        <p>Position: Absolute Acı Burger</p>
+                        <button className='menu-button'>SİPARİŞ VER</button>
+                    </article>
+                    <article style={{ display: "flex", flexDirection: "column" }}>
+                        <article class="menu-right-top">
+                            <h3>Hackathlon<br /> Burger Menü</h3>
+                            <button className='menu-button'>SİPARİŞ VER</button>
+                        </article>
+                        <br />
+                        <article class="menu-right-bottom">
+                            <h3><span style={{ color: "red" }}>Çoooook</span> hızlı<br /> npm gibi kurye</h3>
+                            <button className='menu-button'>SİPARİŞ VER</button>
+                        </article>
+                    </article>
+                </section>
+
+
             </main>
-            <br />
-            <br />
-            <div >
-                <div>ilk sol</div>
-                <div>sağ üst</div>
-                <div>sağ alt</div>
-            </div>
-        </div>
+
+
+        </div >
 
     )
 }
