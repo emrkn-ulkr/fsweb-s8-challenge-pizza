@@ -48,7 +48,7 @@
   justify-content: center;
 }
 
-.menu-container {
+.menu-container-card {
   display: flex;
   flex-direction: row;
   justify-content: center;

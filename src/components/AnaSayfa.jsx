@@ -38,85 +38,90 @@ function AnaSayfa() {
             <br />
             <br />
             <main style={{ backgroundColor: "#fffff9" }}>
-                <div className='home-Icons-buttons'>
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="YeniKore">
-                        <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>Yeni Kore</button>
-                    </Badge>
+                <nav>
+                    <div className='home-Icons-buttons'>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="YeniKore">
+                            <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>Yeni Kore</button>
+                        </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="Pizza">
-                        <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>
-                            Pizza
-                        </button>
-                    </Badge>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="Pizza">
+                            <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>
+                                Pizza
+                            </button>
+                        </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="Burger">
-                        <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>
-                            Burger
-                        </button>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="Burger">
+                            <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>
+                                Burger
+                            </button>
 
-                    </Badge>
+                        </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="Kızartmalar">
-                        <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>
-                            Kızartmalar
-                        </button>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="Kızartmalar">
+                            <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>
+                                Kızartmalar
+                            </button>
 
-                    </Badge>
+                        </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="FastFood">
-                        <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>
-                            Fast food
-                        </button>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="FastFood">
+                            <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>
+                                Fast food
+                            </button>
 
-                    </Badge>
+                        </Badge>
 
-                    <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
-                        color="white"
-                        pill
-                        id="Gazlıİçecek">
-                        <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
-                        <button className='badge-button'>Gazlı İçecek</button>
-                    </Badge>
-                </div>
+                        <Badge style={{ height: "45px", width: "140px", color: "black", marginRight: "25px", cursor: "pointer" }}
+                            color="white"
+                            pill
+                            id="Gazlıİçecek">
+                            <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <button className='badge-button'>Gazlı İçecek</button>
+                        </Badge>
+                    </div>
+                </nav>
                 <br />
                 <br />
-                <section class="menu-container">
-                    <article class="menu-left">
+                <section className="menu-container-card">
+                    <article className="menu-left">
                         <h2>Özel<br /> Lezzetus</h2>
                         <p>Position: Absolute Acı Burger</p>
                         <button className='menu-button'>SİPARİŞ VER</button>
                     </article>
                     <article style={{ display: "flex", flexDirection: "column" }}>
-                        <article class="menu-right-top">
-                            <h3>Hackathlon<br /> Burger Menü</h3>
+                        <article className="menu-right-top">
+                            <h4>Hackathlon<br /> Burger Menü</h4>
                             <button className='menu-button'>SİPARİŞ VER</button>
                         </article>
                         <br />
-                        <article class="menu-right-bottom">
-                            <h3><span style={{ color: "red" }}>Çoooook</span> hızlı<br /> npm gibi kurye</h3>
+                        <article className="menu-right-bottom">
+                            <h4><span style={{ color: "red" }}>Çoooook</span> hızlı<br /> npm gibi kurye</h4>
                             <button className='menu-button'>SİPARİŞ VER</button>
                         </article>
                     </article>
+                </section>
+                <section className='menu-container-second'>
+
                 </section>
 
 
