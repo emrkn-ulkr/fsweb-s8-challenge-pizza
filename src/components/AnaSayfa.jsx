@@ -92,7 +92,7 @@ function AnaSayfa() {
                             color="white"
                             pill
                             id="Gazlıİçecek">
-                            <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
                             Gazlı İçecek
                         </button>
                     </div>
