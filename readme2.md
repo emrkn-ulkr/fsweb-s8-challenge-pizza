@@ -7,4 +7,8 @@
 8 Eylül = Anasayfının container-2 card kısmını ve footer kısmını bitir.(tamamlandı)
 
 9 Eylül = AnaSayfa için gereken Yönlendirmeleri sağla . Tıklanan görsele uygun görseller gelsin ve sayfa etkilileşimli olsun.(tamamlandı)
-9 Eylül = AnaSayfa için gereken tüm etkileşimleri bitir.
+9 Eylül = AnaSayfa için gereken tüm etkileşimleri bitir.(tamamlandı)
+9 Eylül = Sipariş onayı sayfasının görsel dinamiğini oluştur
+
+10 Eylül = Sipariş onayı sayfasının mantık kodlarını tamamla.
+10 Eylül = Sipariş onayı sayfasını komple sil yeniden it'2 ye göre yap çünkü şu anki halini it'2 ye geçirmek mümkün değil.
