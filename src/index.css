@@ -75,7 +75,7 @@
 
 .badge-button {
   border: none;
-  background-color: #fffff9;
+  background-color: hwb(0 100% 0%);
   font-weight: bold;
   color: black;
   margin-right: 25px;
@@ -153,8 +153,8 @@
 }
 
 .container-2-button:hover {
-  background-color: rgb(226, 226, 226);
-  color: red;
+  color: rgb(241, 34, 34);
+  font-size: 17px;
 }
 
 .container-2-navbar {

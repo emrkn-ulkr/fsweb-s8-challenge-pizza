@@ -5,20 +5,44 @@ import { useState } from 'react';
 import { CiTwitter } from "react-icons/ci";
 
 function AnaSayfa() {
-    const [yemekler, setYemekler] = useState([
-        { isim: "Ramen", siparis: 12, icon: "../images/iteration-2-images/icons/1.svg" },
-        { isim: "Pizza", siparis: 15, icon: "../images/iteration-2-images/icons/2.svg" },
-        { isim: "Burger", siparis: 20, icon: "../images/iteration-2-images/icons/3.svg" },
-        { isim: "Kızartmalar", siparis: 10, icon: "../images/iteration-2-images/icons/4.svg" },
-        { isim: "Fast Food", siparis: 5, icon: "../images/iteration-2-images/icons/5.svg" },
-        { isim: "Gazlı İçecek", siparis: 18, icon: "../images/iteration-2-images/icons/6.svg" },
-    ]);
-    const siraliYemekler = [...yemekler].sort((a, b) => b.siparis - a.siparis);
+
+    const [selectedKategori, setSelectedKategori] = useState("Ramen");
     const history = useHistory();
     const handleClick = () => {
         history.push("/orderFormSonuc")
     }
+    const hazirYemekVeri = {
+        "Ramen": [
+            { img: "../images/ramen/3.jpg", isim: "Ramen-Bol-Soslu", puan: 4.9, yorum: 400, fiyat: "110₺" },
+            { img: "../images/ramen/1.jpg", isim: "Ramen-Sade", puan: 4.2, yorum: 628, fiyat: "135₺" },
+            { img: "../images/ramen/2.png", isim: "Ramen-Extra", puan: 4.9, yorum: 122, fiyat: "145₺" }
+        ],
+        "Pizza": [
+            { img: "../images/pizza/1.webp", isim: "Pizza-Mantarsız-Kaşarlı", puan: 4.8, yorum: 600, fiyat: "140₺" },
+            { img: "../images/pizza/111.jpg", isim: "Pizza-Süperos", puan: 4.4, yorum: 500, fiyat: "135₺" },
+            { img: "../images/pizza/3.jpg", isim: "Pizza-Bol-Sucuk-Sever", puan: 4.6, yorum: 150, fiyat: "120₺" }
+        ],
+        "Burger": [
+            { img: "../images/burger/1.webp", isim: "Burger King", puan: 3.1, yorum: 400, fiyat: "180₺" },
+            { img: "../images/burger/chese.webp", isim: "Cheese Burger", puan: 2.8, yorum: 320, fiyat: "175₺" },
+            { img: "../images/burger/3.webp", isim: "Chedar Burger", puan: 4.7, yorum: 250, fiyat: "150₺" }
+        ],
+        "French-fries": [
+            { img: "../images/patato/1.png", isim: "Küçük Patates", puan: 4.1, yorum: 210, fiyat: "45₺" },
+            { img: "../images/patato/3.png", isim: "Orta Patates", puan: 4.0, yorum: 320, fiyat: "115₺" },
+            { img: "../images/patato/0.jpg", isim: "Büyük Patates", puan: 3.7, yorum: 270, fiyat: "120₺" }
+        ],
+        "Fast-Food": [
+            { img: "../images/fastfood/11.jpg", isim: "Tekno Special", puan: 2.1, yorum: 2110, fiyat: "35₺" },
+            { img: "../images/fastfood/22.jpg ", isim: "Tekno Mega Special", puan: 4.0, yorum: 1220, fiyat: "45₺" },
+            { img: "../images/fastfood/33.jpg", isim: "Tekno Elit Special", puan: 5.7, yorum: 2330, fiyat: "25₺" }],
+        "Soft-drinks": [
+            { img: "../images/drinks/15.jpg", isim: "Soft-Drinks", puan: 3.1, yorum: 210, fiyat: "25₺" },
+            { img: "../images/drinks/16.jpg", isim: "Ultra-Soft-Drinks", puan: 2.0, yorum: 120, fiyat: "35₺" },
+            { img: "../images/drinks/17.webp", isim: "Mega-Soft-Drinks", puan: 3.7, yorum: 330, fiyat: "15₺" }
+        ]
 
+    };
     return (
         <div>
             <header>
@@ -145,40 +169,80 @@ function AnaSayfa() {
 
                         <br />
 
+                        {/* 2. navbar buttonları burada */}
                         <div className='container-2-navbar'>
-                            {siraliYemekler.map((yemek) => (
-                                <button className='container-2-button' key={yemek.isim} style={{ margin: "5px", padding: "10px" }}>
-                                    <img src={yemek.icon} alt={yemek.isim} style={{ marginRight: "15px" }} />{yemek.isim}
-                                </button>
-                            ))}
+                            <button
+                                onClick={() => setSelectedKategori("Ramen")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Ramen" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                Ramen
+                            </button>
+
+                            <button
+                                onClick={() => setSelectedKategori("Pizza")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Pizza" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
+
+                                Pizza
+                            </button>
+
+                            <button
+                                onClick={() => setSelectedKategori("Burger")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Burger" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
+
+                                Burger
+                            </button>
+
+                            <button
+                                onClick={() => setSelectedKategori("French-fries")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "French-fries" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
+
+                                French fries
+                            </button>
+
+                            <button
+                                onClick={() => setSelectedKategori("Fast-Food")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Fast-Food" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                Fast Food
+                            </button>
+
+                            <button
+                                onClick={() => setSelectedKategori("Soft-drinks")}
+                                className='container-2-button'
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Soft-drinks" ? "hwb(39 18% 20%)" : "white" }}
+                            >
+                                <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
+                                Soft drinks
+                            </button>
                         </div>
                     </header>
                     <br />
                     <br />
                     <footer style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
-                        <div className='container-2-card'>
-                            <img src="../images/iteration-2-images/pictures/food-1.png" />
-                            <h6 style={{ marginRight: "155px" }}>Terminal Pizza</h6>
-                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
-                                <span>4.9</span> <span>(200)</span> <span style={{ fontWeight: "bold" }}>60₺</span>
+                        {hazirYemekVeri[selectedKategori].map((yemek, index) => (
+                            <div className='container-2-card' key={index}>
+                                <img src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover" }} />
+                                <h6>{yemek.isim}</h6>
+                                <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
+                                    <span>{yemek.puan}</span>
+                                    <span>({yemek.yorum})</span>
+                                    <span style={{ fontWeight: "bold" }}>{yemek.fiyat}</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div className='container-2-card'>
-                            <img src="../images/iteration-2-images/pictures/food-2.png" />
-                            <h6 style={{ marginRight: "75px" }}>Position Absolue Acı Pizza</h6>
-                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
-                                <span>4.9</span> <span>(928)</span> <span style={{ fontWeight: "bold" }}>85₺</span>
-                            </div>
-                        </div>
-
-                        <div className='container-2-card'>
-                            <img src="../images/iteration-2-images/pictures/food-3.png" />
-                            <h6 style={{ marginRight: "85px" }}>useEffect Tavuklu Burger</h6>
-                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
-                                <span>4.9</span> <span>(462)</span> <span style={{ fontWeight: "bold" }}>75₺</span>
-                            </div>
-                        </div>
+                        ))}
                     </footer>
                     <br />
                     <br />
