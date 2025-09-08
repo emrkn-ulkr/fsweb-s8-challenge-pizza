@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import { Badge, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import homeBanners from "/images/iteration-1-images/Homesss.png";
-import { pointer } from '@testing-library/user-event/dist/cjs/pointer/index.js';
+import { useState } from 'react';
 
 function AnaSayfa() {
     const [yemekler, setYemekler] = useState([
@@ -18,6 +17,7 @@ function AnaSayfa() {
     const handleClick = () => {
         history.push("/orderFormSonuc")
     }
+
     return (
         <div>
             <header>
@@ -33,12 +33,23 @@ function AnaSayfa() {
                         justifyContent: "center",
                         alignItems: "center",
                         color: "white",
-                        textAlign: "center"
+                        textAlign: "center",
                     }}>
+                    <h2 style={{
+                        fontFamily: "'Dancing Script', cursive",
+                        fontStyle: 'italic',
+                        fontWeight: 400, fontStyle: "italic", textAlign: "center", color: "yellow", marginBottom: "50px"
+                    }}>fırsatı kaçırma</h2>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <Button
                         onClick={handleClick}
                         color="warning"
-                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "5px", marginBottom: "175px", width: "250px", borderRadius: "15px" }}>
+                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "5px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
                         ACIKTIM
                     </Button>
                 </div>
@@ -140,12 +151,43 @@ function AnaSayfa() {
                                 </button>
                             ))}
                         </div>
-
                     </header>
-
                     <br />
+                    <br />
+                    <footer style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
+                        <div className='container-2-card'>
+                            <img src="../images/iteration-2-images/pictures/food-1.png" />
+                            <h6 style={{ marginRight: "155px" }}>Terminal Pizza</h6>
+                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
+                                <span>4.9</span> <span>(200)</span> <span style={{ fontWeight: "bold" }}>60₺</span>
+                            </div>
+                        </div>
 
+                        <div className='container-2-card'>
+                            <img src="../images/iteration-2-images/pictures/food-2.png" />
+                            <h6 style={{ marginRight: "75px" }}>Position Absolue Acı Pizza</h6>
+                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
+                                <span>4.9</span> <span>(928)</span> <span style={{ fontWeight: "bold" }}>85₺</span>
+                            </div>
+                        </div>
+
+                        <div className='container-2-card'>
+                            <img src="../images/iteration-2-images/pictures/food-3.png" />
+                            <h6 style={{ marginRight: "85px" }}>useEffect Tavuklu Burger</h6>
+                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
+                                <span>4.9</span> <span>(462)</span> <span style={{ fontWeight: "bold" }}>75₺</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </section>
+
+                <footer>
+
+                </footer>
             </main>
 
 

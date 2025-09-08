@@ -163,3 +163,14 @@
   justify-content: center;
   flex-direction: row;
 }
+
+.container-2-card {
+  border-radius: 15px;
+  background-color: white;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
