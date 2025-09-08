@@ -140,17 +140,17 @@ function AnaSayfa() {
                     <article className="menu-left">
                         <h2>Özel<br /> Lezzetus</h2>
                         <p>Position: Absolute Acı Burger</p>
-                        <button className='menu-button'>SİPARİŞ VER</button>
+                        <button className='menu-button' onClick={handleClick}>SİPARİŞ VER</button>
                     </article>
                     <article style={{ display: "flex", flexDirection: "column" }}>
                         <article className="menu-right-top">
                             <h4>Hackathlon<br /> Burger Menü</h4>
-                            <button className='menu-button'>SİPARİŞ VER</button>
+                            <button className='menu-button' onClick={handleClick}>SİPARİŞ VER</button>
                         </article>
                         <br />
                         <article className="menu-right-bottom">
                             <h4><span style={{ color: "red" }}>Çoooook</span> hızlı<br /> npm gibi kurye</h4>
-                            <button className='menu-button'>SİPARİŞ VER</button>
+                            <button className='menu-button' onClick={handleClick}>SİPARİŞ VER</button>
                         </article>
                     </article>
                 </section>
@@ -319,7 +319,8 @@ function AnaSayfa() {
             <hr style={{ margin: "0 auto", border: "0", height: "1px" }} />
 
             <div style={{ backgroundColor: "#1a1a1a", color: "white" }}>
-                <small style={{ marginLeft: "400px" }}>©2023 Teknolojik Yemekler</small> <CiTwitter style={{ marginTop: "-25px", marginLeft: "1500px", fontSize: "30px" }} />
+                <small style={{ marginLeft: "400px" }}>©2023 Teknolojik Yemekler</small> <CiTwitter onClick={() => window.open("https://x.com/xturkiye", "_blank")}
+                    style={{ marginTop: "-25px", marginLeft: "1500px", fontSize: "30px", cursor: "pointer" }} />
 
             </div>
         </div >
