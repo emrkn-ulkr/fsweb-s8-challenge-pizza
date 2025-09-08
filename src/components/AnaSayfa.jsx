@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Button } from 'reactstrap'
 import homeBanners from "/images/iteration-1-images/Homesss.png";
 import { useState } from 'react';
+import { CiTwitter } from "react-icons/ci";
 
 function AnaSayfa() {
     const [yemekler, setYemekler] = useState([
@@ -184,13 +185,79 @@ function AnaSayfa() {
                     <br />
                     <br />
                 </section>
-
-                <footer>
-
-                </footer>
             </main>
+            <footer
+                style={{
+                    width: "100%",
+                    height: "450px",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-around",
+                    backgroundColor: "#1a1a1a",
+                    color: "white",
+                    textAlign: "left",
+                    padding: "40px",
+                    boxSizing: "border-box"
+                }}>
+                <div>
+                    <h2>Teknolojik <br /> Yemekler</h2>
+                    <p>
+                        <img
+                            src="../images/iteration-2-images/footer/icons/icon-1.png"
+                            style={{ marginRight: "10px" }}
+                        />
+                        341 Londonderr Road, <br /> Istanbul Türkiye
+                    </p>
+
+                    <p>
+                        <img
+                            src="../images/iteration-2-images/footer/icons/icon-2.png"
+                            style={{ marginRight: "10px" }}
+                        />
+                        aciktim@teknolojikyemekler.com
+                    </p>
+                    <p> <img
+                        src="../images/iteration-2-images/footer/icons/icon-3.png"
+                        style={{ marginRight: "10px" }} />
+                        +90 216 123 45 67</p>
+                </div>
 
 
+                <div style={{ marginLeft: "-455px" }}>
+                    <h4 style={{ marginBottom: "45px", marginTop: "35px" }}>Sıccacık Menüler</h4>
+                    <p>Terminal Pizza</p>
+                    <p>5 Kişilik Hackhatlon Pizza</p>
+                    <p>useEffect Tavuklu Pizza</p>
+                    <p>Beyaz Console Frosty</p>
+                    <p>Testler Geçti Mutlu Burger</p>
+                    <p>Position Absolute Acı Burger</p>
+                </div>
+
+
+                <div>
+                    <h5>Instagram</h5>
+                    <br />
+                    <div style={{
+                        display: "grid",           // grid düzeni
+                        gridTemplateColumns: "repeat(3, 1fr)", // 3 sütun
+                        gap: "20px",               // aralarındaki boşluk
+                    }}>
+                        <img src="../images/iteration-2-images/footer/insta/li-0.png" />
+                        <img src="../images/iteration-2-images/footer/insta/li-1.png" />
+                        <img src="../images/iteration-2-images/footer/insta/li-2.png" />
+                        <img src="../images/iteration-2-images/footer/insta/li-3.png" />
+                        <img src="../images/iteration-2-images/footer/insta/li-4.png" />
+                        <img src="../images/iteration-2-images/footer/insta/li-5.png" />
+                    </div>
+                </div>
+
+            </footer>
+            <hr style={{ margin: "0 auto", border: "0", height: "1px" }} />
+
+            <div style={{ backgroundColor: "#1a1a1a", color: "white" }}>
+                <small style={{ marginLeft: "400px" }}>©2023 Teknolojik Yemekler</small> <CiTwitter style={{ marginTop: "-25px", marginLeft: "1500px", fontSize: "30px" }} />
+
+            </div>
         </div >
 
     )

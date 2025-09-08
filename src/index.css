@@ -46,6 +46,7 @@
   height: 55px;
   gap: 25px;
   justify-content: center;
+  margin-top: -50px;
 }
 
 .menu-container-card {
