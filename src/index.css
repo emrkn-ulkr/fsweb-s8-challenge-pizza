@@ -255,3 +255,23 @@
 .cursor {
   cursor: pointer;
 }
+
+.orderForm-header-h1 {
+  background-color: red;
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  align-content: center;
+  color: white;
+  margin: 0;
+}
+
+.orderForm-header-img {
+  display: flex;
+  justify-self: center;
+  width: 400px;
+}
+
+.orderForm-header {
+  background-color: #FAF7F2;
+}
