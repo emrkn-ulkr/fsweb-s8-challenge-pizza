@@ -176,3 +176,78 @@
   align-items: center;
   flex-direction: column;
 }
+
+.lastStage-all-div {
+  background-color: #ce2829;
+  height: 100vh;
+}
+
+.lastStage-header-h3 {
+  text-align: center;
+  color: white;
+  padding-top: 25px;
+}
+
+.lastStage-header-h2 {
+  font-family: "Dancing Script", cursive;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  color: #fdc913;
+  padding-top: 25px;
+}
+
+.lastStage-header-h1 {
+  font-size: 55px;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+.lastStage-1-hr {
+  color: white;
+  width: 35%;
+  opacity: 100;
+  text-align: center;
+  place-self: center;
+}
+
+.lastStage-main-h5 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+
+.lastStage-main-card-ul {
+  color: white;
+  padding-top: 65px;
+  justify-self: center;
+  list-style-type: none;
+}
+
+.lastStage-main-card-div li {
+  margin-bottom: 15px;
+}
+
+.lastStage-text-color-low {
+  font-weight: 100;
+}
+
+.lastStage-footer-span {
+  margin-left: 55px;
+}
+
+.lastStage-footer-ul {
+  color: white;
+  list-style-type: none;
+  justify-self: center;
+  margin-top: 50px;
+  border: 1px solid white;
+  padding: 35px;
+  border-radius: 5px;
+}
+
+.lastStage-footer-li {
+  margin-bottom: 15px;
+}
