@@ -1,4 +1,6 @@
+
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
+import { Button } from "reactstrap"
 
 function OrderForm() {
     return (
@@ -11,9 +13,9 @@ function OrderForm() {
                     <img className='orderForm-header-img' src='../images/iteration-2-images/pictures/form-banner.png' />
 
                     <nav className='orderForm-header-nav'>
-                        <Link className="orderForm-header-a">Anasayfa -</Link>
-                        <Link className="orderForm-header-a"> Seçenekler -</Link>
-                        <Link className="red orderForm-header-a"> Sipariş Oluştur</Link>
+                        <Link className="orderForm-header-link">Anasayfa -</Link>
+                        <Link className="orderForm-header-link"> Seçenekler -</Link>
+                        <Link className="red"> Sipariş Oluştur</Link>
                     </nav>
                     <br />
                     <br />
@@ -35,6 +37,32 @@ function OrderForm() {
                 </footer>
             </header>
 
+            <main className="orderForm-main">
+
+                <header className="orderForm-main-header">
+
+                    <div className="orderForm-main-header-div">
+                        <h3>Boyut Seç<span className="star-red">*</span> </h3>
+                        <h3>Hamur Seç<span className="star-red">*</span> </h3>
+                    </div>
+
+                    <div className="orderForm-main-header-div-2">
+                        <Button className="beige" color="beige">
+                            S
+                        </Button>
+
+                        <Button className="beige" color="beige">
+                            M
+                        </Button>
+
+                        <Button className="beige" color="beige">
+                            L
+                        </Button>
+                    </div>
+
+                </header>
+
+            </main>
 
         </div>
     )

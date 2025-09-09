@@ -276,9 +276,6 @@
   background-color: #FAF7F2;
 }
 
-.red {
-  color: red;
-}
 
 .orderForm-header-nav {
   text-align: center;
@@ -286,8 +283,25 @@
   text-decoration: none;
 }
 
-.orderForm-header-a {
+
+.red {
+  text-align: center;
+  margin-top: 75px;
   text-decoration: none;
+  color: red;
+}
+
+.orderForm-header-link {
+  text-decoration: none;
+  color: gray;
+}
+
+.orderForm-header-link:hover {
+  color: rgb(36, 206, 113);
+}
+
+.red:hover {
+  color: rgb(36, 206, 113);
 }
 
 .orderForm-header-h3 {
@@ -325,4 +339,26 @@
   align-items: center;
   padding: 40px 500px;
   margin-left: 260px;
+}
+
+.orderForm-main-header-div {
+  display: flex;
+  gap: 150px;
+}
+
+.star-red {
+  color: red;
+}
+
+.beige {
+  background-color: #FAF7F2;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.orderForm-main {
+  display: flex;
+  justify-content: center;
 }
