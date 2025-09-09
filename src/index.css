@@ -275,3 +275,54 @@
 .orderForm-header {
   background-color: #FAF7F2;
 }
+
+.red {
+  color: red;
+}
+
+.orderForm-header-nav {
+  text-align: center;
+  margin-top: 75px;
+  text-decoration: none;
+}
+
+.orderForm-header-a {
+  text-decoration: none;
+}
+
+.orderForm-header-h3 {
+  text-align: center;
+  margin-right: 75px;
+}
+
+.orderForm-header-main-div {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.orderForm-hM-left-span {
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 325px;
+}
+
+.orderForm-hM-right-span {
+  margin-left: -300px;
+}
+
+.orderForm-hM-weakText {
+  font-weight: 100;
+  font-size: 14px;
+  color: rgb(63, 63, 63);
+}
+
+.orderForm-header-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 500px;
+  margin-left: 260px;
+}
