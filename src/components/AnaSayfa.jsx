@@ -265,7 +265,7 @@ function AnaSayfa() {
                 }}>
                 <div>
                     <h2>Teknolojik <br /> Yemekler</h2>
-                    <p>
+                    <p className='cursor'>
                         <img
                             src="../images/iteration-2-images/footer/icons/icon-1.png"
                             style={{ marginRight: "10px" }}
@@ -273,45 +273,46 @@ function AnaSayfa() {
                         341 Londonderr Road, <br /> Istanbul Türkiye
                     </p>
 
-                    <p>
+                    <p className='cursor'>
                         <img
                             src="../images/iteration-2-images/footer/icons/icon-2.png"
                             style={{ marginRight: "10px" }}
                         />
                         aciktim@teknolojikyemekler.com
                     </p>
-                    <p> <img
-                        src="../images/iteration-2-images/footer/icons/icon-3.png"
-                        style={{ marginRight: "10px" }} />
+                    <p className='cursor'>
+                        <img
+                            src="../images/iteration-2-images/footer/icons/icon-3.png"
+                            style={{ marginRight: "10px" }} />
                         +90 216 123 45 67</p>
                 </div>
 
 
                 <div style={{ marginLeft: "-455px" }}>
                     <h4 style={{ marginBottom: "45px", marginTop: "35px" }}>Sıccacık Menüler</h4>
-                    <p>Terminal Pizza</p>
-                    <p>5 Kişilik Hackhatlon Pizza</p>
-                    <p>useEffect Tavuklu Pizza</p>
-                    <p>Beyaz Console Frosty</p>
-                    <p>Testler Geçti Mutlu Burger</p>
-                    <p>Position Absolute Acı Burger</p>
+                    <p className='cursor'>Terminal Pizza</p>
+                    <p className='cursor'>5 Kişilik Hackhatlon Pizza</p>
+                    <p className='cursor'>useEffect Tavuklu Pizza</p>
+                    <p className='cursor'>Beyaz Console Frosty</p>
+                    <p className='cursor'>Testler Geçti Mutlu Burger</p>
+                    <p className='cursor'>Position Absolute Acı Burger</p>
                 </div>
 
 
                 <div>
-                    <h5>Instagram</h5>
+                    <h5 className='cursor'>Instagram</h5>
                     <br />
                     <div style={{
                         display: "grid",           // grid düzeni
                         gridTemplateColumns: "repeat(3, 1fr)", // 3 sütun
                         gap: "20px",               // aralarındaki boşluk
                     }}>
-                        <img src="../images/iteration-2-images/footer/insta/li-0.png" />
-                        <img src="../images/iteration-2-images/footer/insta/li-1.png" />
-                        <img src="../images/iteration-2-images/footer/insta/li-2.png" />
-                        <img src="../images/iteration-2-images/footer/insta/li-3.png" />
-                        <img src="../images/iteration-2-images/footer/insta/li-4.png" />
-                        <img src="../images/iteration-2-images/footer/insta/li-5.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-0.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-1.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-2.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-3.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-4.png" />
+                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-5.png" />
                     </div>
                 </div>
 
