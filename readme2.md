@@ -11,5 +11,5 @@
 9 Eylül = Sipariş onayı sayfasının görsel dinamiğini oluştur (tamamlandı)
 
 
-10 Eylül = Sipariş onayı sayfasını komple sil yeniden it'2 ye göre yap çünkü şu anki halini it'2 ye geçirmek mümkün değil.
+10 Eylül = Sipariş onayı sayfasını komple sil yeniden it'2 ye göre yap çünkü şu anki halini it'2 ye geçirmek mümkün değil. ( %50 tamamlandı)
 10-11 Eylül = Sipariş onayı sayfasının mantık kodlarını tamamla.
