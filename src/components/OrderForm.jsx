@@ -9,17 +9,38 @@ import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 export default function OrderForm() {
-
-
+    const [checkedItems, setCheckedItems] = useState([]);
+    const [check, setCheck] = useState(false);
     const [hamur, setHamur] = useState("");
 
     const handleChange = (event) => {
+        const { name, value, checked } = event.target;
 
-        const { name, value } = event.target;
-        console.log("İncele:", event.target);
-        if (name == "hamur") {
+        // Hamur seçimi için
+        if (name === "hamur") {
             setHamur(value);
+            return;
         }
+
+        if (checked) {
+            // İşaretleme: maksimum 10 kontrolü
+            if (checkedItems.length < 10) {
+                const newItems = [...checkedItems, name];
+                // @ts-ignore
+                setCheckedItems(newItems);
+                console.log("Seçilenler:", newItems);
+            } else {
+                alert("Maksimum 10 adet ek malzeme seçebilirsiniz ");
+            }
+        } else {
+            // İşaret kaldırma
+            const newItems = checkedItems.filter(item => item !== name);
+            // @ts-ignore
+            setCheckedItems(newItems);
+            console.log("Seçilenler:", newItems);
+        }
+
+
     };
 
     return (
@@ -52,7 +73,7 @@ export default function OrderForm() {
                 </main>
 
                 <footer className="orderForm-header-footer">
-                    <p>Forntent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir..Küçük bir pizzaya bazen pizzetta denir.</p>
+                    <p className='orderForm-header-footer-p'>Forntent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir..Küçük bir pizzaya bazen pizzetta denir.</p>
                 </footer>
             </header>
 
@@ -105,51 +126,63 @@ export default function OrderForm() {
 
                     <div className='orderForm-main-main-div' >
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Sosis" disabled={check} checked={checkedItems.includes("Sosis")} onChange={handleChange} />}
                             label="Sosis" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
-                            label="Kanada Jambonu" />
+                            // @ts-ignore
+                            control={<Checkbox name="Kanada-Jambonu" disabled={check} checked={checkedItems.includes("Kanada-Jambonu")} onChange={handleChange} />}
+                            label="Kanada-Jambonu" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
-                            label="Tavuk Izgara" />
+                            // @ts-ignore
+                            control={<Checkbox name="Tavuk-Izgara" disabled={check} checked={checkedItems.includes("Tavuk-Izgara")} onChange={handleChange} />}
+                            label="Tavuk-Izgara" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Soğan" disabled={check} checked={checkedItems.includes("Soğan")} onChange={handleChange} />}
                             label="Soğan" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Domates" disabled={check} checked={checkedItems.includes("Domates")} onChange={handleChange} />}
                             label="Domates" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Mısır" disabled={check} checked={checkedItems.includes("Mısır")} onChange={handleChange} />}
                             label="Mısır" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Sucuk" disabled={check} checked={checkedItems.includes("Sucuk")} onChange={handleChange} />}
                             label="Sucuk" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Jalepeno" disabled={check} checked={checkedItems.includes("Jalepeno")} onChange={handleChange} />}
                             label="Jalepeno" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Sarımsak" disabled={check} checked={checkedItems.includes("Sarımsak")} onChange={handleChange} />}
                             label="Sarımsak" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Biber" disabled={check} checked={checkedItems.includes("Biber")} onChange={handleChange} />}
                             label="Biber" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Ananas" disabled={check} checked={checkedItems.includes("Ananas")} onChange={handleChange} />}
                             label="Ananas" />
 
                         <FormControlLabel
-                            control={<Checkbox />}
+                            // @ts-ignore
+                            control={<Checkbox name="Kabak" disabled={check} checked={checkedItems.includes("Kabak")} onChange={handleChange} />}
                             label="Kabak" />
                     </div>
                 </main>
