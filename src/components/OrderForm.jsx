@@ -1,8 +1,19 @@
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import { Button } from "reactstrap"
+import { useState } from 'react';
 
 function OrderForm() {
+
+    const [hamur, setHamur] = useState("Hamur Seçiniz");
+
+    const handleChange = (event) => {
+        setHamur(event.target.value);
+    };
     return (
         <div>
 
@@ -42,8 +53,8 @@ function OrderForm() {
                 <header className="orderForm-main-header">
 
                     <div className="orderForm-main-header-div">
-                        <h3>Boyut Seç<span className="star-red">*</span> </h3>
-                        <h3>Hamur Seç<span className="star-red">*</span> </h3>
+                        <h3 className='bottomPush'>Boyut Seç<span className="star-red">*</span> </h3>
+                        <h3 className='bottomPush'>Hamur Seç<span className="star-red">*</span> </h3>
                     </div>
 
                     <div className="orderForm-main-header-div-2">
@@ -55,9 +66,25 @@ function OrderForm() {
                             M
                         </Button>
 
-                        <Button className="beige" color="beige">
+                        <Button className="beige rightPush" color="beige">
                             L
                         </Button>
+                        {
+                            // hamur türü
+                        }
+                        <FormControl className='orderForm-main-header-formcontrol'>
+                            <InputLabel id="demo-simple-select-label">Hamur Seçiniz</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={hamur}
+                                label="Hamur Seçiniz"
+                                onChange={handleChange}>
+                                <MenuItem value={"ince"}>İnce</MenuItem>
+                                <MenuItem value={"orta"}>Orta</MenuItem>
+                                <MenuItem value={"kalın"}>Kalın</MenuItem>
+                            </Select>
+                        </FormControl>
                     </div>
 
                 </header>
