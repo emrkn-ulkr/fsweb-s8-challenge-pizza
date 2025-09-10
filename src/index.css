@@ -308,6 +308,7 @@
 .orderForm-header-h3 {
   text-align: center;
   margin-right: 75px;
+  margin-bottom: 15px;
 }
 
 .orderForm-header-main-div {
@@ -354,10 +355,6 @@
   gap: 150px;
 }
 
-.orderForm-main-header-div-2 {
-  display: flex;
-  justify-content: center;
-}
 
 .star-red {
   color: red;
@@ -384,7 +381,13 @@
 }
 
 .orderForm-main-header-formcontrol {
-  width: 250px;
+  width: 300px;
+}
+
+.orderForm-main-header-div-2 {
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
 }
 
 .rightPush {
@@ -414,4 +417,15 @@
 
 .rightPush3 {
   margin-right: 60px;
+}
+
+.orderForm-main-footer-textarea {
+  margin-left: 655px;
+  margin-top: 15px;
+}
+
+.orderForm-main-footer-h3 {
+  text-align: center;
+  margin-right: 350px;
+  margin-top: 15px;
 }

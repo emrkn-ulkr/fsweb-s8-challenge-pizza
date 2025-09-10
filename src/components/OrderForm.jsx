@@ -12,6 +12,7 @@ export default function OrderForm() {
     const [checkedItems, setCheckedItems] = useState([]);
     const [hamur, setHamur] = useState("");
     const [totalPrice, setTotalPrice] = useState(0);
+    const [not, setNot] = useState("");
 
 
     const handleChange = (event) => {
@@ -110,9 +111,9 @@ export default function OrderForm() {
                                 value={hamur}
                                 label="Hamur Seçiniz"
                                 onChange={handleChange}>
-                                <MenuItem value={"ince"}>İnce</MenuItem>
-                                <MenuItem value={"orta"}>Orta</MenuItem>
-                                <MenuItem value={"kalın"}>Kalın</MenuItem>
+                                <MenuItem value={"ince"}>İnce Hamur</MenuItem>
+                                <MenuItem value={"orta"}>Orta Hamur</MenuItem>
+                                <MenuItem value={"kalın"}>Kalın Hamur</MenuItem>
                             </Select>
                         </FormControl>
                     </div>
@@ -185,6 +186,18 @@ export default function OrderForm() {
                             control={<Checkbox name="Kabak" checked={checkedItems.includes("Kabak")} onChange={handleChange} />}
                             label="Kabak" />
                     </div>
+                    <footer>
+
+                        <h3 className='orderForm-main-footer-h3'>Sipariş Notu</h3>
+                        <textarea
+                            className='orderForm-main-footer-textarea'
+                            rows={2}
+                            cols={65}
+                            value={not}
+                            placeholder='Siparişine eklemek istediğin bir not var mı ?'
+                            onChange={(e) => setNot(e.target.value)} />
+
+                    </footer>
                 </main>
 
             </main>
