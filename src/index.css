@@ -429,3 +429,46 @@
   margin-right: 350px;
   margin-top: 15px;
 }
+
+.orderForm-hr {
+  width: 31%;
+  place-self: anchor-center;
+  margin-left: 60px;
+}
+
+
+.orderForm-main-footer-buttons-div {
+  place-self: anchor-center;
+}
+
+.orderForm-main-footer-button {
+  width: 50px;
+  height: 50px;
+  background-color: #FAF7F2;
+  border: none;
+}
+
+.orderForm-main-footer-div-2 {
+  border: 1px solid black;
+  width: 300px;
+  height: 150px;
+}
+
+.orderForm-main-footer-general-div {
+  display: flex;
+  justify-content: center;
+  gap: 95px;
+  margin-left: 55px;
+}
+
+/*
+
+renk kodları
+
+Sarı #FDC913
+Açık Gri: #5F5F5F
+Koyu Gri #292929
+Kırmızı #CE2829
+Bej: #FAF7F2 
+
+*/

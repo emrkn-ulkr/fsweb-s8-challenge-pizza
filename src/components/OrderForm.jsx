@@ -13,6 +13,7 @@ export default function OrderForm() {
     const [hamur, setHamur] = useState("");
     const [totalPrice, setTotalPrice] = useState(0);
     const [not, setNot] = useState("");
+    const [count, setCount] = useState(1);
 
 
     const handleChange = (event) => {
@@ -40,10 +41,18 @@ export default function OrderForm() {
             setTotalPrice(updated.length * 5);
         }
     };
+
     useEffect(() => {
         console.log("Ek Malzeme Ücret Toplamı:", totalPrice);
     });
 
+    const increment = () => {
+        setCount(prev => prev + 1);
+    }
+
+    const decrement = () => {
+        setCount(prev => prev > 1 ? prev - 1 : prev = 1)
+    }
     return (
         <div>
 
@@ -187,16 +196,35 @@ export default function OrderForm() {
                             label="Kabak" />
                     </div>
                     <footer>
+                        <div>
+                            <h3 className='orderForm-main-footer-h3'>Sipariş Notu</h3>
+                            <textarea
+                                className='orderForm-main-footer-textarea'
+                                rows={2}
+                                cols={65}
+                                value={not}
+                                placeholder='Siparişine eklemek istediğin bir not var mı ?'
+                                onChange={(e) => setNot(e.target.value)} />
+                        </div>
 
-                        <h3 className='orderForm-main-footer-h3'>Sipariş Notu</h3>
-                        <textarea
-                            className='orderForm-main-footer-textarea'
-                            rows={2}
-                            cols={65}
-                            value={not}
-                            placeholder='Siparişine eklemek istediğin bir not var mı ?'
-                            onChange={(e) => setNot(e.target.value)} />
+                        <br />
+                        <br />
+                        <hr className='orderForm-hr' />
+                        <br />
+                        <br />
 
+                        <div className='orderForm-main-footer-general-div'>
+                            <div className='orderForm-main-footer-buttons-div'>
+                                <Button onClick={decrement} className='orderForm-main-footer-button'>-</Button>
+                                <Button className='orderForm-main-footer-button'>{count}</Button>
+                                <Button onClick={increment} className='orderForm-main-footer-button'>+</Button>
+                            </div>
+
+                            <div className='orderForm-main-footer-div-2'>
+
+                            </div>
+
+                        </div>
                     </footer>
                 </main>
 
