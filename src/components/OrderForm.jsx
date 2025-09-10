@@ -5,6 +5,8 @@ import Select from '@mui/material/Select';
 import { Button } from "reactstrap"
 import { useState } from 'react';
 import Link from '@mui/material/Link';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 export default function OrderForm() {
 
@@ -96,7 +98,60 @@ export default function OrderForm() {
                 </header>
 
                 <main>
+                    <div className='orderForm-main-main-header-div'>
+                        <h3 className='rightPush2'>Ek Malzemeler</h3>
+                        <p className='rightPush3'>En fazla 10 malzeme seçebilirsiniz. Adet: 5₺</p>
+                    </div>
 
+                    <div className='orderForm-main-main-div' >
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Sosis" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Kanada Jambonu" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Tavuk Izgara" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Soğan" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Domates" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Mısır" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Sucuk" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Jalepeno" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Sarımsak" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Biber" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Ananas" />
+
+                        <FormControlLabel
+                            control={<Checkbox />}
+                            label="Kabak" />
+                    </div>
                 </main>
 
             </main>

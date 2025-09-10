@@ -344,8 +344,14 @@
 
 .orderForm-main-header-div {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   gap: 150px;
+}
+
+.orderForm-main-header-div-2 {
+  display: flex;
+  justify-content: center;
 }
 
 .star-red {
@@ -362,8 +368,6 @@
 }
 
 .orderForm-main {
-  display: flex;
-  justify-content: center;
   margin-left: 110px;
 }
 
@@ -377,4 +381,25 @@
 
 .bottomPush {
   margin-bottom: 30px;
+}
+
+.orderForm-main-main-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-self: anchor-center;
+  margin-left: 90px;
+  margin-top: 25px;
+}
+
+.orderForm-main-main-header-div {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.rightPush2 {
+  margin-right: 345px;
+}
+
+.rightPush3 {
+  margin-right: 60px;
 }
