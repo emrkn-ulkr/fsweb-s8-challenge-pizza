@@ -2,18 +2,24 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
-import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import { Button } from "reactstrap"
 import { useState } from 'react';
+import Link from '@mui/material/Link';
 
-function OrderForm() {
+export default function OrderForm() {
 
-    const [hamur, setHamur] = useState("Hamur Seçiniz");
+
+    const [hamur, setHamur] = useState("");
 
     const handleChange = (event) => {
-        setHamur(event.target.value);
+
+        const { name, value } = event.target;
+        console.log("İncele:", event.target);
+        if (name == "hamur") {
+            setHamur(value);
+        }
     };
+
     return (
         <div>
 
@@ -75,6 +81,7 @@ function OrderForm() {
                         <FormControl className='orderForm-main-header-formcontrol'>
                             <InputLabel id="demo-simple-select-label">Hamur Seçiniz</InputLabel>
                             <Select
+                                name='hamur'
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 value={hamur}
@@ -86,8 +93,11 @@ function OrderForm() {
                             </Select>
                         </FormControl>
                     </div>
-
                 </header>
+
+                <main>
+
+                </main>
 
             </main>
 
@@ -95,4 +105,3 @@ function OrderForm() {
     )
 }
 
-export default OrderForm
