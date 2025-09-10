@@ -3,15 +3,16 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Button } from "reactstrap"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from '@mui/material/Link';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 export default function OrderForm() {
     const [checkedItems, setCheckedItems] = useState([]);
-    const [check, setCheck] = useState(false);
     const [hamur, setHamur] = useState("");
+    const [totalPrice, setTotalPrice] = useState(0);
+
 
     const handleChange = (event) => {
         const { name, value, checked } = event.target;
@@ -23,25 +24,24 @@ export default function OrderForm() {
         }
 
         if (checked) {
-            // İşaretleme: maksimum 10 kontrolü
             if (checkedItems.length < 10) {
-                const newItems = [...checkedItems, name];
+                const updated = [...checkedItems, name];
                 // @ts-ignore
-                setCheckedItems(newItems);
-                console.log("Seçilenler:", newItems);
+                setCheckedItems(updated);
+                setTotalPrice(updated.length * 5);
             } else {
-                alert("Maksimum 10 adet ek malzeme seçebilirsiniz ");
+                alert("Maksimum 10 adet ek malzeme seçebilirsiniz ⚠️");
             }
         } else {
-            // İşaret kaldırma
-            const newItems = checkedItems.filter(item => item !== name);
+            const updated = checkedItems.filter(item => item !== name);
             // @ts-ignore
-            setCheckedItems(newItems);
-            console.log("Seçilenler:", newItems);
+            setCheckedItems(updated);
+            setTotalPrice(updated.length * 5);
         }
-
-
     };
+    useEffect(() => {
+        console.log("Ek Malzeme Ücret Toplamı:", totalPrice);
+    });
 
     return (
         <div>
@@ -127,62 +127,62 @@ export default function OrderForm() {
                     <div className='orderForm-main-main-div' >
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sosis" disabled={check} checked={checkedItems.includes("Sosis")} onChange={handleChange} />}
+                            control={<Checkbox name="Sosis" checked={checkedItems.includes("Sosis")} onChange={handleChange} />}
                             label="Sosis" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Kanada-Jambonu" disabled={check} checked={checkedItems.includes("Kanada-Jambonu")} onChange={handleChange} />}
+                            control={<Checkbox name="Kanada-Jambonu" checked={checkedItems.includes("Kanada-Jambonu")} onChange={handleChange} />}
                             label="Kanada-Jambonu" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Tavuk-Izgara" disabled={check} checked={checkedItems.includes("Tavuk-Izgara")} onChange={handleChange} />}
+                            control={<Checkbox name="Tavuk-Izgara" checked={checkedItems.includes("Tavuk-Izgara")} onChange={handleChange} />}
                             label="Tavuk-Izgara" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Soğan" disabled={check} checked={checkedItems.includes("Soğan")} onChange={handleChange} />}
+                            control={<Checkbox name="Soğan" checked={checkedItems.includes("Soğan")} onChange={handleChange} />}
                             label="Soğan" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Domates" disabled={check} checked={checkedItems.includes("Domates")} onChange={handleChange} />}
+                            control={<Checkbox name="Domates" checked={checkedItems.includes("Domates")} onChange={handleChange} />}
                             label="Domates" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Mısır" disabled={check} checked={checkedItems.includes("Mısır")} onChange={handleChange} />}
+                            control={<Checkbox name="Mısır" checked={checkedItems.includes("Mısır")} onChange={handleChange} />}
                             label="Mısır" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sucuk" disabled={check} checked={checkedItems.includes("Sucuk")} onChange={handleChange} />}
+                            control={<Checkbox name="Sucuk" checked={checkedItems.includes("Sucuk")} onChange={handleChange} />}
                             label="Sucuk" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Jalepeno" disabled={check} checked={checkedItems.includes("Jalepeno")} onChange={handleChange} />}
+                            control={<Checkbox name="Jalepeno" checked={checkedItems.includes("Jalepeno")} onChange={handleChange} />}
                             label="Jalepeno" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sarımsak" disabled={check} checked={checkedItems.includes("Sarımsak")} onChange={handleChange} />}
+                            control={<Checkbox name="Sarımsak" checked={checkedItems.includes("Sarımsak")} onChange={handleChange} />}
                             label="Sarımsak" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Biber" disabled={check} checked={checkedItems.includes("Biber")} onChange={handleChange} />}
+                            control={<Checkbox name="Biber" checked={checkedItems.includes("Biber")} onChange={handleChange} />}
                             label="Biber" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Ananas" disabled={check} checked={checkedItems.includes("Ananas")} onChange={handleChange} />}
+                            control={<Checkbox name="Ananas" checked={checkedItems.includes("Ananas")} onChange={handleChange} />}
                             label="Ananas" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Kabak" disabled={check} checked={checkedItems.includes("Kabak")} onChange={handleChange} />}
+                            control={<Checkbox name="Kabak" checked={checkedItems.includes("Kabak")} onChange={handleChange} />}
                             label="Kabak" />
                     </div>
                 </main>
