@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Link from '@mui/material/Link';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { CiTwitter } from 'react-icons/ci';
 
 export default function OrderForm() {
     const [checkedItems, setCheckedItems] = useState([]);
@@ -221,14 +222,147 @@ export default function OrderForm() {
                             </div>
 
                             <div className='orderForm-main-footer-div-2'>
-
+                                <h4 className='pushTop colorBlack'>Sipariş Toplamı</h4>
+                                <p className='pushTop font-Weak '>Seçimler <span className='pushLeft'>25.00₺</span></p>
+                                <p className='pushTop colorRedBold' >Toplam <span className='pushLeft'>110.50₺</span></p>
                             </div>
-
                         </div>
+
+                        <div>
+                            <button className='orderForm-main-footer-div-button'>Sipariş Ver</button>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </footer>
                 </main>
-
             </main>
+            <footer
+                style={{
+                    width: "100%",
+                    height: "auto", // yükseklik sabitleme
+                    display: "flex",
+                    flexDirection: "column", // dikey yön
+                    justifyContent: "space-between",
+                    backgroundColor: "#1a1a1a",
+                    color: "white",
+                    textAlign: "left",
+                    padding: "40px",
+                    boxSizing: "border-box",
+                }}
+            >
+                {/* Üst içerik (3 kolon) */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        justifyContent: "space-around",
+                        marginBottom: "40px",
+                    }}
+                >
+                    <div>
+                        <h2>Teknolojik <br /> Yemekler</h2>
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-1.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            341 Londonderr Road, <br /> Istanbul Türkiye
+                        </p>
+
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-2.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            aciktim@teknolojikyemekler.com
+                        </p>
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-3.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            +90 216 123 45 67
+                        </p>
+                    </div>
+
+                    <div style={{ marginLeft: "-350px" }}>
+                        <h4 style={{ marginBottom: "45px", marginTop: "35px" }}>
+                            Sıccacık Menüler
+                        </h4>
+                        <p className="cursor">Terminal Pizza</p>
+                        <p className="cursor">5 Kişilik Hackhatlon Pizza</p>
+                        <p className="cursor">useEffect Tavuklu Pizza</p>
+                        <p className="cursor">Beyaz Console Frosty</p>
+                        <p className="cursor">Testler Geçti Mutlu Burger</p>
+                        <p className="cursor">Position Absolute Acı Burger</p>
+                    </div>
+
+                    <div>
+                        <h5 className="cursor">Instagram</h5>
+                        <br />
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: "repeat(3, 1fr)",
+                                gap: "20px",
+                            }}
+                        >
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-0.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-1.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-2.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-3.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-4.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-5.png"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Alt satır */}
+                <hr
+                    style={{
+                        margin: "0 auto",
+                        border: "0",
+                        borderTop: "1px solid #444", // görünür çizgi
+                        width: "100%",
+                    }}
+                />
+
+                <div
+                    style={{
+                        marginTop: "20px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <small style={{ marginLeft: "195px" }}>©2023 Teknolojik Yemekler</small>
+                    <CiTwitter
+                        onClick={() => window.open("https://x.com/xturkiye", "_blank")}
+                        style={{ fontSize: "30px", cursor: "pointer" }}
+                    />
+                </div>
+            </footer>
 
         </div>
     )

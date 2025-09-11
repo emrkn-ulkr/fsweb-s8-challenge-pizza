@@ -445,11 +445,12 @@
   width: 50px;
   height: 50px;
   background-color: #FAF7F2;
+  color: gray;
   border: none;
 }
 
 .orderForm-main-footer-div-2 {
-  border: 1px solid black;
+  border: none;
   width: 300px;
   height: 150px;
 }
@@ -459,6 +460,38 @@
   justify-content: center;
   gap: 95px;
   margin-left: 55px;
+}
+
+.colorRedBold {
+  color: #CE2829;
+  font-weight: bold;
+}
+
+.pushTop {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.colorBlack {
+  color: black
+}
+
+.font-Weak {
+  font-weight: 0;
+  font-size: 16px;
+}
+
+.pushLeft {
+  margin-left: 100px;
+}
+
+.orderForm-main-footer-div-button {
+  background-color: #FDC913;
+  border: none;
+  width: 300px;
+  height: 40px;
+  margin-left: 889px;
+  font-weight: 500;
 }
 
 /*

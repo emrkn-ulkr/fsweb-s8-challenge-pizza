@@ -1,8 +1,9 @@
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Button } from 'reactstrap'
-import homeBanners from "/images/iteration-1-images/Homesss.png";
+import homeBanners from "../../images/iteration-1-images/Homesss.png";
 import { useState } from 'react';
 import { CiTwitter } from "react-icons/ci";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AnaSayfa() {
 
@@ -44,7 +45,7 @@ function AnaSayfa() {
 
     };
     return (
-        <div>
+        <>
             <header>
                 <div className='AnaSayfa-div'
                     style={{
@@ -63,7 +64,7 @@ function AnaSayfa() {
                     <h2 style={{
                         fontFamily: "'Dancing Script', cursive",
                         fontStyle: 'italic',
-                        fontWeight: 400, fontStyle: "italic", textAlign: "center", color: "yellow", marginBottom: "50px"
+                        fontWeight: 400, textAlign: "center", color: "yellow", marginBottom: "50px"
                     }}>fırsatı kaçırma</h2>
                     <br />
                     <br />
@@ -74,7 +75,7 @@ function AnaSayfa() {
                     <Button
                         onClick={handleClick}
                         color="warning"
-                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "5px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
+                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "15px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
                         ACIKTIM
                     </Button>
                 </div>
@@ -86,7 +87,6 @@ function AnaSayfa() {
                     <div className='home-Icons-buttons'>
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="YeniKore">
                             <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Yeni Kore
@@ -94,7 +94,6 @@ function AnaSayfa() {
 
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="Pizza">
                             <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Pizza
@@ -102,7 +101,6 @@ function AnaSayfa() {
 
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="Burger">
                             <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Burger
@@ -110,7 +108,6 @@ function AnaSayfa() {
 
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="Kızartmalar">
                             <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Kızartmalar
@@ -118,7 +115,6 @@ function AnaSayfa() {
 
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="FastFood">
                             <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Fast food
@@ -126,7 +122,6 @@ function AnaSayfa() {
 
                         <button className='badge-button'
                             color="white"
-                            pill
                             id="Gazlıİçecek">
                             <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
                             Gazlı İçecek
@@ -163,7 +158,7 @@ function AnaSayfa() {
                         <h4 style={{
                             fontFamily: "'Dancing Script', cursive",
                             fontStyle: 'italic',
-                            fontWeight: 400, fontStyle: "italic", textAlign: "center", color: "red"
+                            fontWeight: 400, textAlign: "center", color: "red"
                         }}>en çok paketlenen menüler</h4><br />
                         <h3 style={{ textAlign: "center" }}>Acıktıran Kodlara Doyuran Lezzetler</h3>
 
@@ -174,7 +169,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("Ramen")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Ramen" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Ramen" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Ramen
@@ -183,7 +178,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("Pizza")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Pizza" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Pizza" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -193,7 +188,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("Burger")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Burger" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Burger" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -203,7 +198,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("French-fries")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "French-fries" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "French-fries" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -213,7 +208,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("Fast-Food")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Fast-Food" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Fast-Food" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Fast Food
@@ -222,7 +217,7 @@ function AnaSayfa() {
                             <button
                                 onClick={() => setSelectedKategori("Soft-drinks")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Soft-drinks" ? "hwb(39 18% 20%)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Soft-drinks" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
                                 Soft drinks
@@ -253,78 +248,128 @@ function AnaSayfa() {
             <footer
                 style={{
                     width: "100%",
-                    height: "450px",
+                    height: "auto", // yükseklik sabitleme
                     display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-around",
+                    flexDirection: "column", // dikey yön
+                    justifyContent: "space-between",
                     backgroundColor: "#1a1a1a",
                     color: "white",
                     textAlign: "left",
                     padding: "40px",
-                    boxSizing: "border-box"
-                }}>
-                <div>
-                    <h2>Teknolojik <br /> Yemekler</h2>
-                    <p className='cursor'>
-                        <img
-                            src="../images/iteration-2-images/footer/icons/icon-1.png"
-                            style={{ marginRight: "10px" }}
-                        />
-                        341 Londonderr Road, <br /> Istanbul Türkiye
-                    </p>
+                    boxSizing: "border-box",
+                }}
+            >
+                {/* Üst içerik (3 kolon) */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        justifyContent: "space-around",
+                        marginBottom: "40px",
+                    }}
+                >
+                    <div>
+                        <h2>Teknolojik <br /> Yemekler</h2>
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-1.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            341 Londonderr Road, <br /> Istanbul Türkiye
+                        </p>
 
-                    <p className='cursor'>
-                        <img
-                            src="../images/iteration-2-images/footer/icons/icon-2.png"
-                            style={{ marginRight: "10px" }}
-                        />
-                        aciktim@teknolojikyemekler.com
-                    </p>
-                    <p className='cursor'>
-                        <img
-                            src="../images/iteration-2-images/footer/icons/icon-3.png"
-                            style={{ marginRight: "10px" }} />
-                        +90 216 123 45 67</p>
-                </div>
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-2.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            aciktim@teknolojikyemekler.com
+                        </p>
+                        <p className="cursor">
+                            <img
+                                src="../images/iteration-2-images/footer/icons/icon-3.png"
+                                style={{ marginRight: "10px" }}
+                            />
+                            +90 216 123 45 67
+                        </p>
+                    </div>
 
+                    <div style={{ marginLeft: "-350px" }}>
+                        <h4 style={{ marginBottom: "45px", marginTop: "35px" }}>
+                            Sıccacık Menüler
+                        </h4>
+                        <p className="cursor">Terminal Pizza</p>
+                        <p className="cursor">5 Kişilik Hackhatlon Pizza</p>
+                        <p className="cursor">useEffect Tavuklu Pizza</p>
+                        <p className="cursor">Beyaz Console Frosty</p>
+                        <p className="cursor">Testler Geçti Mutlu Burger</p>
+                        <p className="cursor">Position Absolute Acı Burger</p>
+                    </div>
 
-                <div style={{ marginLeft: "-455px" }}>
-                    <h4 style={{ marginBottom: "45px", marginTop: "35px" }}>Sıccacık Menüler</h4>
-                    <p className='cursor'>Terminal Pizza</p>
-                    <p className='cursor'>5 Kişilik Hackhatlon Pizza</p>
-                    <p className='cursor'>useEffect Tavuklu Pizza</p>
-                    <p className='cursor'>Beyaz Console Frosty</p>
-                    <p className='cursor'>Testler Geçti Mutlu Burger</p>
-                    <p className='cursor'>Position Absolute Acı Burger</p>
-                </div>
-
-
-                <div>
-                    <h5 className='cursor'>Instagram</h5>
-                    <br />
-                    <div style={{
-                        display: "grid",           // grid düzeni
-                        gridTemplateColumns: "repeat(3, 1fr)", // 3 sütun
-                        gap: "20px",               // aralarındaki boşluk
-                    }}>
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-0.png" />
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-1.png" />
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-2.png" />
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-3.png" />
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-4.png" />
-                        <img className='cursor' src="../images/iteration-2-images/footer/insta/li-5.png" />
+                    <div>
+                        <h5 className="cursor">Instagram</h5>
+                        <br />
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: "repeat(3, 1fr)",
+                                gap: "20px",
+                            }}
+                        >
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-0.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-1.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-2.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-3.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-4.png"
+                            />
+                            <img
+                                className="cursor"
+                                src="../images/iteration-2-images/footer/insta/li-5.png"
+                            />
+                        </div>
                     </div>
                 </div>
 
+                {/* Alt satır */}
+                <hr
+                    style={{
+                        margin: "0 auto",
+                        border: "0",
+                        borderTop: "1px solid #444", // görünür çizgi
+                        width: "100%",
+                    }}
+                />
+
+                <div
+                    style={{
+                        marginTop: "20px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <small style={{ marginLeft: "195px" }}>©2023 Teknolojik Yemekler</small>
+                    <CiTwitter
+                        onClick={() => window.open("https://x.com/xturkiye", "_blank")}
+                        style={{ fontSize: "30px", cursor: "pointer" }}
+                    />
+                </div>
             </footer>
-            <hr style={{ margin: "0 auto", border: "0", height: "1px" }} />
-
-            <div style={{ backgroundColor: "#1a1a1a", color: "white" }}>
-                <small style={{ marginLeft: "400px" }}>©2023 Teknolojik Yemekler</small> <CiTwitter onClick={() => window.open("https://x.com/xturkiye", "_blank")}
-                    style={{ marginTop: "-25px", marginLeft: "1500px", fontSize: "30px", cursor: "pointer" }} />
-
-            </div>
-        </div >
+        </ >
 
     )
 }
