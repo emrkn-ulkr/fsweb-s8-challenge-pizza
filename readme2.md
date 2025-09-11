@@ -14,5 +14,6 @@
 10 Eylül = Sipariş onayı sayfasını komple sil yeniden it'2 ye göre yap çünkü şu anki halini it'2 ye geçirmek mümkün değil. ( tamamlandı)
 11 Eylül = Bütün sayfaların görselleri (tamamlandı).
 
-12 Eylül = Mantık kodlarına başla = OrderFormdan LastStageye stateleri gönder ve dinamik bir yapı oluştur.
-12 Eylül = Stateler gönderildi OrderForm ve LastStage artık dinamik.
+12 Eylül = Mantık kodlarına başla = OrderFormdan LastStageye stateleri gönder ve dinamik bir yapı oluştur. ( tamamlandı)
+12 Eylül = Stateler gönderildi OrderForm ve LastStage artık dinamik. ( tamamlandı)
+12 Eylül = Proje ayağa kaldırıldı başarılı çalışıyor.( Gerekirse daha fazla geliştirilebilir minimum süre ile tasarlanmıştır ve kodlanmıştır.) Tamamlandı.

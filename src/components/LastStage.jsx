@@ -27,11 +27,11 @@ function LastStage() {
                     <li>
                         <span className='lastStage-text-color-low'>Ek Malzemeler:</span> <strong>{checkedItems && checkedItems.length > 0 && (
                             <>
-                                {/* İlk malzeme */}
+
                                 {checkedItems[0]}
                                 <br />
-                                {/* Kalan malzemeler 3'er 3'er */}
-                                {/* // @ts-ignore */}
+
+                                {/* @ts-ignore */}
                                 {checkedItems.slice(1).map((item, index) => (
                                     <span key={index}>
                                         {item}
