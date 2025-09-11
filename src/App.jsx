@@ -1,25 +1,27 @@
-import { useState } from 'react'
-import './App.css'
-import OrderForm from './components/OrderForm'
-import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min'
-import AnaSayfa from './components/AnaSayfa'
-import LastStage from './components/LastStage'
-
-// linkler
-// <Link to="/">Anasayfa</Link>-  <Link to="/lastStage">Seçenekler</Link>- <Link to="/orderFormSonuc">Sipariş Oluştur</Link>
-
+import { Routes, Route, Link } from "react-router-dom";
+import AnaSayfa from "./components/AnaSayfa";
+import LastStage from "./components/LastStage";
+import OrderForm from "./components/OrderForm";
 
 function App() {
-
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={AnaSayfa} />
-        <Route exact path="/orderFormSonuc" component={OrderForm} />
-        <Route exact path="/lastStage" component={LastStage} />
-      </Switch>
+      {/* Basit bir navigasyon menüsü */}
+      <nav style={{ marginBottom: "20px" }}>
+        <Link to="/" style={{ marginRight: "10px" }}>Ana Sayfa</Link>
+        <Link to="/orderFormSonuc" style={{ marginRight: "10px" }}>Order Form</Link>
+        <Link to="/lastStage">Last Stage</Link>
+      </nav>
+
+      {/* Route tanımlamaları */}
+      <Routes>
+        <Route path="/" element={<AnaSayfa />} />
+        <Route path="/anaSayfa" element={<AnaSayfa />} /> {/* /anaSayfa URL’si için */}
+        <Route path="/orderFormSonuc" element={<OrderForm />} />
+        <Route path="/lastStage" element={<LastStage />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

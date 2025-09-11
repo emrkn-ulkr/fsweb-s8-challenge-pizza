@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import { useNavigate } from "react-router-dom";
 import { Button } from 'reactstrap'
 import homeBanners from "../../images/iteration-1-images/Homesss.png";
 import { useState } from 'react';
@@ -8,9 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function AnaSayfa() {
 
     const [selectedKategori, setSelectedKategori] = useState("Ramen");
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleClick = () => {
-        history.push("/orderFormSonuc")
+        navigate("/orderFormSonuc");
     }
     const hazirYemekVeri = {
         "Ramen": [
