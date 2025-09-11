@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { CiTwitter } from 'react-icons/ci';
+import { useNavigate } from "react-router-dom";
+
 
 export default function OrderForm() {
     const [checkedItems, setCheckedItems] = useState([]);
@@ -16,6 +18,39 @@ export default function OrderForm() {
     const [not, setNot] = useState("");
     const [count, setCount] = useState(1);
     const [size, setSize] = useState("M");
+    const [allTotal, setAllTotal] = useState(0);
+    const [pizzaAdetFiyat, setPizzaAdetFiyat] = useState(110.50);
+    const navigate = useNavigate();
+
+    const handleSubmit = () => {
+        // Tüm alanların doldurulup doldurulmadığını kontrol et
+        if (!size) {
+            alert("Lütfen pizza boyutunu seçin!");
+            return;
+        }
+
+        if (!hamur) {
+            alert("Lütfen hamur türünü seçin!");
+            return;
+        }
+
+        if (checkedItems.length === 0) {
+            alert("Lütfen en az bir ek malzeme seçin!");
+            return;
+        }
+
+        // Eğer tüm alanlar doldurulduysa yönlendir
+        navigate("/lastStage", {
+            state: {
+                pizzaSize: size,
+                checkedItems: checkedItems,
+                hamur: hamur,
+                ekMalzemeUcretToplamı: totalPrice,
+                allTotal: allTotal,
+                not: not
+            }
+        });
+    };
 
 
     // @ts-ignore
@@ -47,8 +82,8 @@ export default function OrderForm() {
     };
 
     useEffect(() => {
-        console.log("Ek Malzeme Ücret Toplamı:", totalPrice);
-    }, [totalPrice]);
+        setAllTotal(count * pizzaAdetFiyat + totalPrice);
+    }, [count, totalPrice, pizzaAdetFiyat]);
 
     const increment = () => {
         setCount(prev => prev + 1);
@@ -57,6 +92,8 @@ export default function OrderForm() {
     const decrement = () => {
         setCount(prev => prev > 1 ? prev - 1 : 1)
     }
+
+
     return (
         <div>
 
@@ -102,15 +139,15 @@ export default function OrderForm() {
                     </div>
 
                     <div className="orderForm-main-header-div-2">
-                        <Button className="beige" color="beige">
+                        <Button style={{ backgroundColor: size === "S" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setSize("S")}>
                             S
                         </Button>
 
-                        <Button className="beige" color="beige">
+                        <Button style={{ backgroundColor: size === "M" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setSize("M")}>
                             M
                         </Button>
 
-                        <Button className="beige rightPush" color="beige">
+                        <Button style={{ backgroundColor: size === "L" ? "green" : "beige" }} className="beige rightPush" color="beige" onClick={() => setSize("L")}>
                             L
                         </Button>
                         {
@@ -125,9 +162,9 @@ export default function OrderForm() {
                                 value={hamur}
                                 label="Hamur Seçiniz"
                                 onChange={handleChange}>
-                                <MenuItem value={"ince"}>İnce Hamur</MenuItem>
-                                <MenuItem value={"orta"}>Orta Hamur</MenuItem>
-                                <MenuItem value={"kalın"}>Kalın Hamur</MenuItem>
+                                <MenuItem value={"İp ince hamur"}>İnce Hamur</MenuItem>
+                                <MenuItem value={"Orta hamur"}>Orta Hamur</MenuItem>
+                                <MenuItem value={"Kalın"}>Kalın Hamur</MenuItem>
                             </Select>
                         </FormControl>
                     </div>
@@ -233,7 +270,7 @@ export default function OrderForm() {
                         </div>
 
                         <div>
-                            <button className='orderForm-main-footer-div-button'>Sipariş Ver</button>
+                            <button onClick={handleSubmit} className='orderForm-main-footer-div-button'>Sipariş Ver</button>
                         </div>
                         <br />
                         <br />
