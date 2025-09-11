@@ -1,6 +1,3 @@
-import React from 'react'
-import success from "/images/iteration-1-images/Success.png";
-
 
 function LastStage() {
     return (

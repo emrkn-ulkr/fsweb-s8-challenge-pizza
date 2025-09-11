@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Button } from "reactstrap"
 import { useEffect, useState } from 'react';
-import Link from '@mui/material/Link';
+import { Link } from "react-router-dom";
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { CiTwitter } from 'react-icons/ci';
@@ -15,8 +15,10 @@ export default function OrderForm() {
     const [totalPrice, setTotalPrice] = useState(0);
     const [not, setNot] = useState("");
     const [count, setCount] = useState(1);
+    const [size, setSize] = useState("M");
 
 
+    // @ts-ignore
     const handleChange = (event) => {
         const { name, value, checked } = event.target;
 
@@ -36,6 +38,7 @@ export default function OrderForm() {
                 alert("Maksimum 10 adet ek malzeme seçebilirsiniz ⚠️");
             }
         } else {
+            // @ts-ignore
             const updated = checkedItems.filter(item => item !== name);
             // @ts-ignore
             setCheckedItems(updated);
@@ -45,35 +48,36 @@ export default function OrderForm() {
 
     useEffect(() => {
         console.log("Ek Malzeme Ücret Toplamı:", totalPrice);
-    });
+    }, [totalPrice]);
 
     const increment = () => {
         setCount(prev => prev + 1);
     }
 
     const decrement = () => {
-        setCount(prev => prev > 1 ? prev - 1 : prev = 1)
+        setCount(prev => prev > 1 ? prev - 1 : 1)
     }
     return (
         <div>
 
             <header className='orderForm-header'>
 
-                <header>
+                <div>
                     <h1 className='orderForm-header-h1'>Teknolojik Yemekler</h1>
                     <img className='orderForm-header-img' src='../images/iteration-2-images/pictures/form-banner.png' />
 
                     <nav className='orderForm-header-nav'>
-                        <Link className="orderForm-header-link">Anasayfa -</Link>
-                        <Link className="orderForm-header-link"> Seçenekler -</Link>
-                        <Link className="red"> Sipariş Oluştur</Link>
+                        <Link to="/" className="orderForm-header-link">Anasayfa -</Link>
+                        <Link to="/orderFormSonuc" className="orderForm-header-link"> Seçenekler -</Link>
+                        <Link to="/lastStage" className="red"> Sipariş Oluştur</Link>
+
                     </nav>
                     <br />
                     <br />
                     <br />
 
                     <h3 className="orderForm-header-h3">Position Absolute Acı Pizza</h3>
-                </header>
+                </div>
 
                 <main>
                     <div className="orderForm-header-main-div">
@@ -365,6 +369,7 @@ export default function OrderForm() {
             </footer>
 
         </div>
+
     )
 }
 

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from 'reactstrap'
+// @ts-ignore
 import homeBanners from "../../images/iteration-1-images/Homesss.png";
 import { useState } from 'react';
 import { CiTwitter } from "react-icons/ci";
@@ -75,7 +76,7 @@ function AnaSayfa() {
                     <Button
                         onClick={handleClick}
                         color="warning"
-                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "15px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
+                        style={{ fontSize: "25px", padding: "10px 30px", marginTop: "10px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
                         ACIKTIM
                     </Button>
                 </div>
@@ -227,17 +228,19 @@ function AnaSayfa() {
                     <br />
                     <br />
                     <footer style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
-                        {hazirYemekVeri[selectedKategori].map((yemek, index) => (
-                            <div className='container-2-card' key={index}>
-                                <img src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover" }} />
-                                <h6>{yemek.isim}</h6>
-                                <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
-                                    <span>{yemek.puan}</span>
-                                    <span>({yemek.yorum})</span>
-                                    <span style={{ fontWeight: "bold" }}>{yemek.fiyat}</span>
+                        {
+                            // @ts-ignore
+                            hazirYemekVeri[selectedKategori].map((yemek, index) => (
+                                <div className='container-2-card' key={index}>
+                                    <img src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover" }} />
+                                    <h6>{yemek.isim}</h6>
+                                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
+                                        <span>{yemek.puan}</span>
+                                        <span>({yemek.yorum})</span>
+                                        <span style={{ fontWeight: "bold" }}>{yemek.fiyat}</span>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
                     </footer>
                     <br />
                     <br />
