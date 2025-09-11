@@ -232,7 +232,7 @@ function AnaSayfa() {
                             // @ts-ignore
                             hazirYemekVeri[selectedKategori].map((yemek, index) => (
                                 <div className='container-2-card' key={index}>
-                                    <img src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover" }} />
+                                    <img onClick={handleClick} src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover", cursor: "pointer" }} />
                                     <h6>{yemek.isim}</h6>
                                     <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "80%", fontSize: "15px" }}>
                                         <span>{yemek.puan}</span>

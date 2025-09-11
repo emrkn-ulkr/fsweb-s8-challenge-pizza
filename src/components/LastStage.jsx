@@ -31,6 +31,7 @@ function LastStage() {
                                 {checkedItems[0]}
                                 <br />
                                 {/* Kalan malzemeler 3'er 3'er */}
+                                {/* // @ts-ignore */}
                                 {checkedItems.slice(1).map((item, index) => (
                                     <span key={index}>
                                         {item}
