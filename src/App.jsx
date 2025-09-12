@@ -12,7 +12,7 @@ function App() {
       {/* Route tanımlamaları */}
       <Routes>
         <Route path="/" element={<AnaSayfa />} />
-        <Route path="/orderFormSonuc" element={<OrderForm />} />
+        <Route path="/orderForm" element={<OrderForm />} />
         <Route path="/lastStage" element={<LastStage />} />
       </Routes>
     </div>

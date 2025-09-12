@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 function LastStage() {
     const location = useLocation();
-    const { pizzaSize, checkedItems, hamur, ekMalzemeUcretToplamı, allTotal, not } = location.state || {};
+    const { pizzaSize, checkPizzaToppings, pizzaDough, totalToppingPrice, allTotalPrice, note } = location.state || {};
     return (
         <div className='lastStage-all-div'>
             <header>
@@ -21,21 +21,21 @@ function LastStage() {
                     </li>
 
                     <li>
-                        <span className='lastStage-text-color-low'>Hamur:</span> <strong>{hamur}</strong>
+                        <span className='lastStage-text-color-low'>Hamur:</span> <strong>{pizzaDough}</strong>
                     </li>
 
                     <li>
-                        <span className='lastStage-text-color-low'>Ek Malzemeler:</span> <strong>{checkedItems && checkedItems.length > 0 && (
+                        <span className='lastStage-text-color-low'>Ek Malzemeler:</span> <strong>{checkPizzaToppings && checkPizzaToppings.length > 0 && (
                             <>
 
-                                {checkedItems[0]}
+                                {checkPizzaToppings[0]}
                                 <br />
 
                                 {/* @ts-ignore */}
-                                {checkedItems.slice(1).map((item, index) => (
+                                {checkPizzaToppings.slice(1).map((item, index) => (
                                     <span key={index}>
                                         {item}
-                                        {((index + 1) % 3 === 0 || index === checkedItems.slice(1).length - 1) ? <br /> : ", "}
+                                        {((index + 1) % 3 === 0 || index === checkPizzaToppings.slice(1).length - 1) ? <br /> : ", "}
                                     </span>
                                 ))}
                             </>
@@ -47,10 +47,10 @@ function LastStage() {
             <footer>
 
                 <ul className='lastStage-footer-ul'>
-                    <li> {not.length > 0 ? `Sipariş notu: ${not}` : ""}</li>
+                    <li> {note.length > 0 ? `Sipariş noteu: ${note}` : ""}</li>
                     <li className='lastStage-footer-li'>Sipariş Toplamı</li>
-                    <li>Seçimler: <span className='lastStage-footer-span'>{ekMalzemeUcretToplamı}₺</span></li>
-                    <li>Toplam: <span className='lastStage-footer-span'>{allTotal}₺</span></li>
+                    <li>Seçimler: <span className='lastStage-footer-span'>{totalToppingPrice}₺</span></li>
+                    <li>Toplam: <span className='lastStage-footer-span'>{allTotalPrice}₺</span></li>
                 </ul>
 
             </footer>

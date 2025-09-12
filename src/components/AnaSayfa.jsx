@@ -8,12 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AnaSayfa() {
 
-    const [selectedKategori, setSelectedKategori] = useState("Ramen");
+    const [selectedCategory, setSelectedCategory] = useState("Ramen");
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/orderFormSonuc");
+        navigate("/orderForm");
     }
-    const hazirYemekVeri = {
+    const readyFoodData = {
         "Ramen": [
             { img: "../images/ramen/3.jpg", isim: "Ramen-Bol-Soslu", puan: 4.9, yorum: 400, fiyat: "110₺" },
             { img: "../images/ramen/1.jpg", isim: "Ramen-Sade", puan: 4.2, yorum: 628, fiyat: "135₺" },
@@ -169,18 +169,18 @@ function AnaSayfa() {
                         {/* 2. navbar buttonları burada */}
                         <div className='container-2-navbar'>
                             <button
-                                onClick={() => setSelectedKategori("Ramen")}
+                                onClick={() => setSelectedCategory("Ramen")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Ramen" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Ramen" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Ramen
                             </button>
 
                             <button
-                                onClick={() => setSelectedKategori("Pizza")}
+                                onClick={() => setSelectedCategory("Pizza")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Pizza" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Pizza" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -188,9 +188,9 @@ function AnaSayfa() {
                             </button>
 
                             <button
-                                onClick={() => setSelectedKategori("Burger")}
+                                onClick={() => setSelectedCategory("Burger")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Burger" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Burger" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -198,9 +198,9 @@ function AnaSayfa() {
                             </button>
 
                             <button
-                                onClick={() => setSelectedKategori("French-fries")}
+                                onClick={() => setSelectedCategory("French-fries")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "French-fries" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "French-fries" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
@@ -208,18 +208,18 @@ function AnaSayfa() {
                             </button>
 
                             <button
-                                onClick={() => setSelectedKategori("Fast-Food")}
+                                onClick={() => setSelectedCategory("Fast-Food")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Fast-Food" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Fast-Food" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Fast Food
                             </button>
 
                             <button
-                                onClick={() => setSelectedKategori("Soft-drinks")}
+                                onClick={() => setSelectedCategory("Soft-drinks")}
                                 className='container-2-button'
-                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedKategori === "Soft-drinks" ? "rgb(255 230 184)" : "white" }}
+                                style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Soft-drinks" ? "rgb(255 230 184)" : "white" }}
                             >
                                 <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
                                 Soft drinks
@@ -231,7 +231,7 @@ function AnaSayfa() {
                     <footer style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: "20px" }}>
                         {
                             // @ts-ignore
-                            hazirYemekVeri[selectedKategori].map((yemek, index) => (
+                            readyFoodData[selectedCategory].map((yemek, index) => (
                                 <div className='container-2-card' key={index}>
                                     <img onClick={handleClick} src={yemek.img} alt={yemek.isim} style={{ maxWidth: "100%", maxHeight: "150px", objectFit: "cover", cursor: "pointer" }} />
                                     <h6>{yemek.isim}</h6>

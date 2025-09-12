@@ -12,29 +12,29 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function OrderForm() {
-    const [checkedItems, setCheckedItems] = useState([]);
-    const [hamur, setHamur] = useState("");
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [not, setNot] = useState("");
-    const [count, setCount] = useState(1);
-    const [size, setSize] = useState("M");
-    const [allTotal, setAllTotal] = useState(0);
-    const [pizzaAdetFiyat, setPizzaAdetFiyat] = useState(110.50);
+    const [checkPizzaToppings, setCheckPizzaToppings] = useState([]);
+    const [pizzaDough, setPizzaDough] = useState("");
+    const [totalToppingPrice, setToppingPrice] = useState(0);
+    const [note, setNote] = useState("");
+    const [pizzaCount, setPizzaCount] = useState(1);
+    const [pizzaSize, setPizzaSize] = useState("M");
+    const [allTotalPrice, setAllTotalPrice] = useState(0);
+    const [onePizzaPrice, setOnePizzaPrice] = useState(110.50);
     const navigate = useNavigate();
 
     const handleSubmit = () => {
         // Tüm alanların doldurulup doldurulmadığını kontrol et
-        if (!size) {
+        if (!pizzaSize) {
             alert("Lütfen pizza boyutunu seçin!");
             return;
         }
 
-        if (!hamur) {
-            alert("Lütfen hamur türünü seçin!");
+        if (!pizzaDough) {
+            alert("Lütfen pizzaDough türünü seçin!");
             return;
         }
 
-        if (checkedItems.length === 0) {
+        if (checkPizzaToppings.length === 0) {
             alert("Lütfen en az bir ek malzeme seçin!");
             return;
         }
@@ -42,12 +42,12 @@ export default function OrderForm() {
         // Eğer tüm alanlar doldurulduysa yönlendir
         navigate("/lastStage", {
             state: {
-                pizzaSize: size,
-                checkedItems: checkedItems,
-                hamur: hamur,
-                ekMalzemeUcretToplamı: totalPrice,
-                allTotal: allTotal,
-                not: not
+                pizzaSize: pizzaSize,
+                checkPizzaToppings: checkPizzaToppings,
+                pizzaDough: pizzaDough,
+                totalToppingPrice: totalToppingPrice,
+                allTotalPrice: allTotalPrice,
+                note: note
             }
         });
     };
@@ -58,41 +58,55 @@ export default function OrderForm() {
         const { name, value, checked } = event.target;
 
         // Hamur seçimi için
-        if (name === "hamur") {
-            setHamur(value);
+        if (name === "pizzaDough") {
+            setPizzaDough(value);
             return;
         }
 
         if (checked) {
-            if (checkedItems.length < 10) {
-                const updated = [...checkedItems, name];
+            if (checkPizzaToppings.length < 10) {
+                const updated = [...checkPizzaToppings, name];
                 // @ts-ignore
-                setCheckedItems(updated);
-                setTotalPrice(updated.length * 5);
+                setCheckPizzaToppings(updated);
+                setToppingPrice(updated.length * 5);
             } else {
                 alert("Maksimum 10 adet ek malzeme seçebilirsiniz ⚠️");
             }
         } else {
             // @ts-ignore
-            const updated = checkedItems.filter(item => item !== name);
+            const updated = checkPizzaToppings.filter(item => item !== name);
             // @ts-ignore
-            setCheckedItems(updated);
-            setTotalPrice(updated.length * 5);
+            setCheckPizzaToppings(updated);
+            setToppingPrice(updated.length * 5);
         }
     };
 
     useEffect(() => {
-        setAllTotal(count * pizzaAdetFiyat + totalPrice);
-    }, [count, totalPrice, pizzaAdetFiyat]);
+        setAllTotalPrice(pizzaCount * onePizzaPrice + totalToppingPrice);
+    }, [pizzaCount, totalToppingPrice, onePizzaPrice]);
 
     const increment = () => {
-        setCount(prev => prev + 1);
+        setPizzaCount(prev => prev + 1);
     }
 
     const decrement = () => {
-        setCount(prev => prev > 1 ? prev - 1 : 1)
+        setPizzaCount(prev => prev > 1 ? prev - 1 : 1)
     }
-
+    useEffect(() => {
+        switch (pizzaSize) {
+            case "S":
+                setOnePizzaPrice(85.50); // küçük pizza fiyatı
+                break;
+            case "M":
+                setOnePizzaPrice(110.50); // orta pizza fiyatı
+                break;
+            case "L":
+                setOnePizzaPrice(130); // büyük pizza fiyatı
+                break;
+            default:
+                setOnePizzaPrice(110.50);
+        }
+    }, [pizzaSize]);
 
     return (
         <div>
@@ -105,7 +119,7 @@ export default function OrderForm() {
 
                     <nav className='orderForm-header-nav'>
                         <Link to="/" className="orderForm-header-link">Anasayfa -</Link>
-                        <Link to="/orderFormSonuc" className="orderForm-header-link"> Seçenekler -</Link>
+                        <Link to="/orderForm" className="orderForm-header-link"> Seçenekler -</Link>
                         <Link to="/lastStage" className="red"> Sipariş Oluştur</Link>
 
                     </nav>
@@ -125,7 +139,7 @@ export default function OrderForm() {
                 </main>
 
                 <footer className="orderForm-header-footer">
-                    <p className='orderForm-header-footer-p'>Forntent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir..Küçük bir pizzaya bazen pizzetta denir.</p>
+                    <p className='orderForm-header-footer-p'>Forntent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı pizzaDoughdan oluşan İtalyan kökenli lezzetli bir yemektir..Küçük bir pizzaya bazen pizzetta denir.</p>
                 </footer>
             </header>
 
@@ -139,31 +153,31 @@ export default function OrderForm() {
                     </div>
 
                     <div className="orderForm-main-header-div-2">
-                        <Button style={{ backgroundColor: size === "S" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setSize("S")}>
+                        <Button style={{ backgroundColor: pizzaSize === "S" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setPizzaSize("S")}>
                             S
                         </Button>
 
-                        <Button style={{ backgroundColor: size === "M" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setSize("M")}>
+                        <Button style={{ backgroundColor: pizzaSize === "M" ? "green" : "beige" }} className="beige" color="beige" onClick={() => setPizzaSize("M")}>
                             M
                         </Button>
 
-                        <Button style={{ backgroundColor: size === "L" ? "green" : "beige" }} className="beige rightPush" color="beige" onClick={() => setSize("L")}>
+                        <Button style={{ backgroundColor: pizzaSize === "L" ? "green" : "beige" }} className="beige rightPush" color="beige" onClick={() => setPizzaSize("L")}>
                             L
                         </Button>
                         {
-                            // hamur türü
+                            // pizzaDough türü
                         }
                         <FormControl className='orderForm-main-header-formcontrol'>
                             <InputLabel id="demo-simple-select-label">Hamur Seçiniz</InputLabel>
                             <Select
-                                name='hamur'
+                                name='pizzaDough'
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={hamur}
+                                value={pizzaDough}
                                 label="Hamur Seçiniz"
                                 onChange={handleChange}>
-                                <MenuItem value={"İp ince hamur"}>İnce Hamur</MenuItem>
-                                <MenuItem value={"Orta hamur"}>Orta Hamur</MenuItem>
+                                <MenuItem value={"İp ince pizzaDough"}>İnce Hamur</MenuItem>
+                                <MenuItem value={"Orta pizzaDough"}>Orta Hamur</MenuItem>
                                 <MenuItem value={"Kalın"}>Kalın Hamur</MenuItem>
                             </Select>
                         </FormControl>
@@ -179,62 +193,62 @@ export default function OrderForm() {
                     <div className='orderForm-main-main-div' >
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sosis" checked={checkedItems.includes("Sosis")} onChange={handleChange} />}
+                            control={<Checkbox name="Sosis" checked={checkPizzaToppings.includes("Sosis")} onChange={handleChange} />}
                             label="Sosis" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Kanada-Jambonu" checked={checkedItems.includes("Kanada-Jambonu")} onChange={handleChange} />}
+                            control={<Checkbox name="Kanada-Jambonu" checked={checkPizzaToppings.includes("Kanada-Jambonu")} onChange={handleChange} />}
                             label="Kanada-Jambonu" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Tavuk-Izgara" checked={checkedItems.includes("Tavuk-Izgara")} onChange={handleChange} />}
+                            control={<Checkbox name="Tavuk-Izgara" checked={checkPizzaToppings.includes("Tavuk-Izgara")} onChange={handleChange} />}
                             label="Tavuk-Izgara" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Soğan" checked={checkedItems.includes("Soğan")} onChange={handleChange} />}
+                            control={<Checkbox name="Soğan" checked={checkPizzaToppings.includes("Soğan")} onChange={handleChange} />}
                             label="Soğan" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Domates" checked={checkedItems.includes("Domates")} onChange={handleChange} />}
+                            control={<Checkbox name="Domates" checked={checkPizzaToppings.includes("Domates")} onChange={handleChange} />}
                             label="Domates" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Mısır" checked={checkedItems.includes("Mısır")} onChange={handleChange} />}
+                            control={<Checkbox name="Mısır" checked={checkPizzaToppings.includes("Mısır")} onChange={handleChange} />}
                             label="Mısır" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sucuk" checked={checkedItems.includes("Sucuk")} onChange={handleChange} />}
+                            control={<Checkbox name="Sucuk" checked={checkPizzaToppings.includes("Sucuk")} onChange={handleChange} />}
                             label="Sucuk" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Jalepeno" checked={checkedItems.includes("Jalepeno")} onChange={handleChange} />}
+                            control={<Checkbox name="Jalepeno" checked={checkPizzaToppings.includes("Jalepeno")} onChange={handleChange} />}
                             label="Jalepeno" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Sarımsak" checked={checkedItems.includes("Sarımsak")} onChange={handleChange} />}
+                            control={<Checkbox name="Sarımsak" checked={checkPizzaToppings.includes("Sarımsak")} onChange={handleChange} />}
                             label="Sarımsak" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Biber" checked={checkedItems.includes("Biber")} onChange={handleChange} />}
+                            control={<Checkbox name="Biber" checked={checkPizzaToppings.includes("Biber")} onChange={handleChange} />}
                             label="Biber" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Ananas" checked={checkedItems.includes("Ananas")} onChange={handleChange} />}
+                            control={<Checkbox name="Ananas" checked={checkPizzaToppings.includes("Ananas")} onChange={handleChange} />}
                             label="Ananas" />
 
                         <FormControlLabel
                             // @ts-ignore
-                            control={<Checkbox name="Kabak" checked={checkedItems.includes("Kabak")} onChange={handleChange} />}
+                            control={<Checkbox name="Kabak" checked={checkPizzaToppings.includes("Kabak")} onChange={handleChange} />}
                             label="Kabak" />
                     </div>
                     <footer>
@@ -244,9 +258,9 @@ export default function OrderForm() {
                                 className='orderForm-main-footer-textarea'
                                 rows={2}
                                 cols={65}
-                                value={not}
-                                placeholder='Siparişine eklemek istediğin bir not var mı ?'
-                                onChange={(e) => setNot(e.target.value)} />
+                                value={note}
+                                placeholder='Siparişine eklemek istediğin bir note var mı ?'
+                                onChange={(e) => setNote(e.target.value)} />
                         </div>
 
                         <br />
@@ -258,14 +272,14 @@ export default function OrderForm() {
                         <div className='orderForm-main-footer-general-div'>
                             <div className='orderForm-main-footer-buttons-div'>
                                 <Button onClick={decrement} className='orderForm-main-footer-button'>-</Button>
-                                <Button className='orderForm-main-footer-button'>{count}</Button>
+                                <Button className='orderForm-main-footer-button'>{pizzaCount}</Button>
                                 <Button onClick={increment} className='orderForm-main-footer-button'>+</Button>
                             </div>
 
                             <div className='orderForm-main-footer-div-2'>
                                 <h4 className='pushTop colorBlack'>Sipariş Toplamı</h4>
-                                <p className='pushTop font-Weak '>Seçimler <span className='pushLeft'>25.00₺</span></p>
-                                <p className='pushTop colorRedBold' >Toplam <span className='pushLeft'>110.50₺</span></p>
+                                <p className='pushTop font-Weak '>Seçimler <span className='pushLeft'>{totalToppingPrice}₺</span></p>
+                                <p className='pushTop colorRedBold' >Toplam <span className='pushLeft'>{onePizzaPrice}₺</span></p>
                             </div>
                         </div>
 
