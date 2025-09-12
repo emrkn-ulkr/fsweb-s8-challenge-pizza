@@ -3,14 +3,14 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import LastStage from "./LastStage";
 
 test("LastStage bileşeni location.state ile gelen verileri doğru gösteriyor", () => {
-    // Mock state verisi
+    // Bileşenin beklediği mock state
     const mockState = {
         pizzaSize: "M",
-        hamur: "İnce",
-        checkedItems: ["Mantar", "Zeytin", "Biber"],
-        ekMalzemeUcretToplamı: 25,
-        allTotal: 120,
-        not: "Extra acı olsun"
+        pizzaDough: "İp ince hamur",
+        checkPizzaToppings: ["Mantar", "Zeytin", "Biber"],
+        totalToppingPrice: 25,
+        allTotalPrice: 120,
+        note: "Extra acı olsun"
     };
 
     render(
@@ -29,15 +29,15 @@ test("LastStage bileşeni location.state ile gelen verileri doğru gösteriyor",
     // Pizza boyutu ve hamur
     const boyutLi = screen.getByText(/Boyut:/i).closest('li');
     // @ts-ignore
-    expect(boyutLi.querySelector('strong').textContent).toBe("M");
+    expect(boyutLi.querySelector('strong').textContent).toBe(mockState.pizzaSize);
 
     const hamurLi = screen.getByText(/Hamur:/i).closest('li');
     // @ts-ignore
-    expect(hamurLi.querySelector('strong').textContent).toBe("İnce");
+    expect(hamurLi.querySelector('strong').textContent).toBe(mockState.pizzaDough);
 
     // Ek malzemeler
     const ekMalzemelerLi = screen.getByText(/Ek Malzemeler:/i).closest('li');
-    mockState.checkedItems.forEach(item => {
+    mockState.checkPizzaToppings.forEach(item => {
         // @ts-ignore
         expect(ekMalzemelerLi.textContent).toContain(item);
     });
@@ -45,14 +45,14 @@ test("LastStage bileşeni location.state ile gelen verileri doğru gösteriyor",
     // Sipariş notu
     const notLi = screen.getByText(/Sipariş notu:/i).closest('li');
     // @ts-ignore
-    expect(notLi.textContent).toContain(mockState.not);
+    expect(notLi.textContent).toContain(mockState.note);
 
     // Fiyatlar
     const secimlerLi = screen.getByText(/Seçimler:/i).closest('li');
     // @ts-ignore
-    expect(secimlerLi.textContent).toContain(mockState.ekMalzemeUcretToplamı.toString());
+    expect(secimlerLi.textContent).toContain(mockState.totalToppingPrice.toString());
 
     const toplamLi = screen.getByText(/Toplam:/i).closest('li');
     // @ts-ignore
-    expect(toplamLi.textContent).toContain(mockState.allTotal.toString());
+    expect(toplamLi.textContent).toContain(mockState.allTotalPrice.toString());
 });

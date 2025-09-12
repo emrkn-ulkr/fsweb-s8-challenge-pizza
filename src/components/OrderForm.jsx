@@ -82,12 +82,11 @@ export default function OrderForm() {
     };
 
     useEffect(() => {
-        setAllTotalPrice(pizzaCount * onePizzaPrice + totalToppingPrice);
+        setAllTotalPrice((pizzaCount * onePizzaPrice) + totalToppingPrice);
     }, [pizzaCount, totalToppingPrice, onePizzaPrice]);
 
     const increment = () => {
         setPizzaCount(prev => prev + 1);
-
     }
 
     const decrement = () => {
@@ -260,7 +259,7 @@ export default function OrderForm() {
                                 rows={2}
                                 cols={65}
                                 value={note}
-                                placeholder='Siparişine eklemek istediğin bir note var mı ?'
+                                placeholder='Siparişine eklemek istediğin bir not var mı ?'
                                 onChange={(e) => setNote(e.target.value)} />
                         </div>
 

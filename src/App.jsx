@@ -6,9 +6,6 @@ import OrderForm from "./components/OrderForm";
 function App() {
   return (
     <div>
-      {/* Basit bir navigasyon menüsü */}
-
-
       {/* Route tanımlamaları */}
       <Routes>
         <Route path="/" element={<AnaSayfa />} />

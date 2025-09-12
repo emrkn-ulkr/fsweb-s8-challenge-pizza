@@ -49,11 +49,11 @@ describe("OrderForm bileşeni", () => {
         expect(mockedNavigate).toHaveBeenCalledWith("/lastStage", {
             state: {
                 pizzaSize: "M",
-                hamur: "İp ince hamur",
-                checkedItems: ["Sosis"],
-                ekMalzemeUcretToplamı: 5,
-                allTotal: 115.5, // 110.5 + 5
-                not: "Extra acı olsun",
+                pizzaDough: "İp ince hamur",
+                checkPizzaToppings: ["Sosis"],
+                totalToppingPrice: 5,
+                allTotalPrice: 115.5,
+                note: "Extra acı olsun",
             },
         });
     });
@@ -69,7 +69,6 @@ describe("OrderForm bileşeni", () => {
 
         // Hiçbir alan seçmeden tıkla
         fireEvent.click(screen.getByText("Sipariş Ver"));
-
-        expect(window.alert).toHaveBeenCalledWith("Lütfen hamur türünü seçin!");
+        expect(window.alert).toHaveBeenCalledWith("Lütfen Hamur türünü seçin!");
     });
 });
