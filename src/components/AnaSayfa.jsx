@@ -12,6 +12,7 @@ function AnaSayfa() {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate("/orderForm");
+        window.scrollTo(0, 0);
     }
     const readyFoodData = {
         "Ramen": [

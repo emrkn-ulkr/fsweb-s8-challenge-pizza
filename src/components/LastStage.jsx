@@ -47,7 +47,7 @@ function LastStage() {
             <footer>
 
                 <ul className='lastStage-footer-ul'>
-                    <li> {note.length > 0 ? `Sipariş noteu: ${note}` : ""}</li>
+                    <li> {note.length > 0 ? `Sipariş notu: ${note}` : ""}</li>
                     <li className='lastStage-footer-li'>Sipariş Toplamı</li>
                     <li>Seçimler: <span className='lastStage-footer-span'>{totalToppingPrice}₺</span></li>
                     <li>Toplam: <span className='lastStage-footer-span'>{allTotalPrice}₺</span></li>

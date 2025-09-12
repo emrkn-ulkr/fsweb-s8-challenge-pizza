@@ -25,17 +25,17 @@ export default function OrderForm() {
     const handleSubmit = () => {
         // Tüm alanların doldurulup doldurulmadığını kontrol et
         if (!pizzaSize) {
-            alert("Lütfen pizza boyutunu seçin!");
+            alert("Lütfen Pizza boyutunu seçin!");
             return;
         }
 
         if (!pizzaDough) {
-            alert("Lütfen pizzaDough türünü seçin!");
+            alert("Lütfen Hamur türünü seçin!");
             return;
         }
 
         if (checkPizzaToppings.length === 0) {
-            alert("Lütfen en az bir ek malzeme seçin!");
+            alert("Lütfen En az bir ek malzeme seçin!");
             return;
         }
 
@@ -70,7 +70,7 @@ export default function OrderForm() {
                 setCheckPizzaToppings(updated);
                 setToppingPrice(updated.length * 5);
             } else {
-                alert("Maksimum 10 adet ek malzeme seçebilirsiniz ⚠️");
+                alert("Maksimum 10 adet ek malzeme seçebilirsiniz !");
             }
         } else {
             // @ts-ignore
@@ -87,6 +87,7 @@ export default function OrderForm() {
 
     const increment = () => {
         setPizzaCount(prev => prev + 1);
+
     }
 
     const decrement = () => {
@@ -176,8 +177,8 @@ export default function OrderForm() {
                                 value={pizzaDough}
                                 label="Hamur Seçiniz"
                                 onChange={handleChange}>
-                                <MenuItem value={"İp ince pizzaDough"}>İnce Hamur</MenuItem>
-                                <MenuItem value={"Orta pizzaDough"}>Orta Hamur</MenuItem>
+                                <MenuItem value={"İp ince hamur"}>İnce Hamur</MenuItem>
+                                <MenuItem value={"Orta hamur"}>Orta Hamur</MenuItem>
                                 <MenuItem value={"Kalın"}>Kalın Hamur</MenuItem>
                             </Select>
                         </FormControl>
@@ -279,7 +280,7 @@ export default function OrderForm() {
                             <div className='orderForm-main-footer-div-2'>
                                 <h4 className='pushTop colorBlack'>Sipariş Toplamı</h4>
                                 <p className='pushTop font-Weak '>Seçimler <span className='pushLeft'>{totalToppingPrice}₺</span></p>
-                                <p className='pushTop colorRedBold' >Toplam <span className='pushLeft'>{onePizzaPrice}₺</span></p>
+                                <p className='pushTop colorRedBold' >Toplam <span className='pushLeft'>{allTotalPrice}₺</span></p>
                             </div>
                         </div>
 
