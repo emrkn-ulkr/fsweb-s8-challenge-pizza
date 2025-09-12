@@ -74,6 +74,7 @@ function AnaSayfa() {
                     <br />
                     <br />
                     <Button
+                        name="aciktim"
                         onClick={handleClick}
                         color="warning"
                         style={{ fontSize: "25px", padding: "10px 30px", marginTop: "10px", marginBottom: "430px", width: "250px", borderRadius: "15px", height: "60px" }}>
