@@ -65,25 +65,23 @@ export default function OrderForm() {
 
         if (checked) {
             if (checkPizzaToppings.length < 10) {
-                const updated = [...checkPizzaToppings, name];
-                // @ts-ignore
-                setCheckPizzaToppings(updated);
-                setToppingPrice(updated.length * 5);
+                setCheckPizzaToppings([...checkPizzaToppings, name]);
             } else {
                 alert("Maksimum 10 adet ek malzeme seçebilirsiniz !");
             }
         } else {
-            // @ts-ignore
-            const updated = checkPizzaToppings.filter(item => item !== name);
-            // @ts-ignore
-            setCheckPizzaToppings(updated);
-            setToppingPrice(updated.length * 5);
+            setCheckPizzaToppings(checkPizzaToppings.filter(item => item !== name));
         }
     };
-    const totalTruePrice = pizzaCount * (onePizzaPrice + totalToppingPrice);
     useEffect(() => {
-        setAllTotalPrice(totalTruePrice);
-    }, [pizzaCount, totalToppingPrice, onePizzaPrice]);
+        setToppingPrice(checkPizzaToppings.length * 5 * pizzaCount);
+    }, [checkPizzaToppings, pizzaCount]);
+
+    useEffect(() => {
+        setAllTotalPrice(pizzaCount * onePizzaPrice + totalToppingPrice);
+    }, [pizzaCount, onePizzaPrice, totalToppingPrice]);
+
+
 
     const increment = () => {
         setPizzaCount(prev => prev + 1);
