@@ -80,9 +80,9 @@ export default function OrderForm() {
             setToppingPrice(updated.length * 5);
         }
     };
-
+    const totalTruePrice = pizzaCount * (onePizzaPrice + totalToppingPrice);
     useEffect(() => {
-        setAllTotalPrice((pizzaCount * onePizzaPrice) + totalToppingPrice);
+        setAllTotalPrice(totalTruePrice);
     }, [pizzaCount, totalToppingPrice, onePizzaPrice]);
 
     const increment = () => {
