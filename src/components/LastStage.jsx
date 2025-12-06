@@ -1,10 +1,13 @@
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LastStage() {
     const location = useLocation();
     const { pizzaSize, checkPizzaToppings, pizzaDough, totalToppingPrice, allTotalPrice, note } = location.state || {};
     return (
+
         <div className='lastStage-all-div'>
+            <Link to="/" className="orderForm-header-link">Anasayfa -</Link>
             <header>
                 <h3 className='lastStage-header-h3'>Teknolojik Yemekler</h3>
                 <h2 className='lastStage-header-h2'>lezzetin yolda</h2>
