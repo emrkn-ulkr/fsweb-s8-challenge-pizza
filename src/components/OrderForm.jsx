@@ -113,7 +113,7 @@ export default function OrderForm() {
 
                 <div>
                     <h1 className='orderForm-header-h1'>Teknolojik Yemekler</h1>
-                    <img className='orderForm-header-img' src='../images/iteration-2-images/pictures/form-banner.png' />
+                    <img className='orderForm-header-img' src='/images/iteration-2-images/pictures/form-banner.png' />
 
                     <nav className='orderForm-header-nav'>
                         <Link to="/" className="orderForm-header-link">Anasayfa -</Link>
@@ -319,7 +319,7 @@ export default function OrderForm() {
                         <h2>Teknolojik <br /> Yemekler</h2>
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-1.png"
+                                src="/images/iteration-2-images/footer/icons/icon-1.png"
                                 style={{ marginRight: "10px" }}
                             />
                             341 Londonderr Road, <br /> Istanbul Türkiye
@@ -327,14 +327,14 @@ export default function OrderForm() {
 
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-2.png"
+                                src="/images/iteration-2-images/footer/icons/icon-2.png"
                                 style={{ marginRight: "10px" }}
                             />
                             aciktim@teknolojikyemekler.com
                         </p>
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-3.png"
+                                src="/images/iteration-2-images/footer/icons/icon-3.png"
                                 style={{ marginRight: "10px" }}
                             />
                             +90 216 123 45 67
@@ -365,27 +365,27 @@ export default function OrderForm() {
                         >
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-0.png"
+                                src="/images/iteration-2-images/footer/insta/li-0.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-1.png"
+                                src="/images/iteration-2-images/footer/insta/li-1.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-2.png"
+                                src="/images/iteration-2-images/footer/insta/li-2.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-3.png"
+                                src="/images/iteration-2-images/footer/insta/li-3.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-4.png"
+                                src="/images/iteration-2-images/footer/insta/li-4.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-5.png"
+                                src="/images/iteration-2-images/footer/insta/li-5.png"
                             />
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from 'reactstrap'
 // @ts-ignore
-import homeBanners from "../../images/iteration-1-images/Homesss.png";
+import homeBanners from "/images/iteration-1-images/Homesss.png";
 import { useState } from 'react';
 import { CiTwitter } from "react-icons/ci";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,33 +16,33 @@ function AnaSayfa() {
     }
     const readyFoodData = {
         "Ramen": [
-            { img: "../images/ramen/3.jpg", isim: "Ramen-Bol-Soslu", puan: 4.9, yorum: 400, fiyat: "110₺" },
-            { img: "../images/ramen/1.jpg", isim: "Ramen-Sade", puan: 4.2, yorum: 628, fiyat: "135₺" },
-            { img: "../images/ramen/2.png", isim: "Ramen-Extra", puan: 4.9, yorum: 122, fiyat: "145₺" }
+            { img: "/images/ramen/3.jpg", isim: "Ramen-Bol-Soslu", puan: 4.9, yorum: 400, fiyat: "110₺" },
+            { img: "/images/ramen/1.jpg", isim: "Ramen-Sade", puan: 4.2, yorum: 628, fiyat: "135₺" },
+            { img: "/images/ramen/2.png", isim: "Ramen-Extra", puan: 4.9, yorum: 122, fiyat: "145₺" }
         ],
         "Pizza": [
-            { img: "../images/pizza/1.webp", isim: "Pizza-Mantarsız-Kaşarlı", puan: 4.8, yorum: 600, fiyat: "140₺" },
-            { img: "../images/pizza/111.jpg", isim: "Pizza-Süperos", puan: 4.4, yorum: 500, fiyat: "135₺" },
-            { img: "../images/pizza/3.jpg", isim: "Pizza-Bol-Sucuk-Sever", puan: 4.6, yorum: 150, fiyat: "120₺" }
+            { img: "/images/pizza/1.webp", isim: "Pizza-Mantarsız-Kaşarlı", puan: 4.8, yorum: 600, fiyat: "140₺" },
+            { img: "/images/pizza/111.jpg", isim: "Pizza-Süperos", puan: 4.4, yorum: 500, fiyat: "135₺" },
+            { img: "/images/pizza/3.jpg", isim: "Pizza-Bol-Sucuk-Sever", puan: 4.6, yorum: 150, fiyat: "120₺" }
         ],
         "Burger": [
-            { img: "../images/burger/1.webp", isim: "Burger King", puan: 3.1, yorum: 400, fiyat: "180₺" },
-            { img: "../images/burger/chese.webp", isim: "Cheese Burger", puan: 2.8, yorum: 320, fiyat: "175₺" },
-            { img: "../images/burger/3.webp", isim: "Chedar Burger", puan: 4.7, yorum: 250, fiyat: "150₺" }
+            { img: "/images/burger/1.webp", isim: "Burger King", puan: 3.1, yorum: 400, fiyat: "180₺" },
+            { img: "/images/burger/chese.webp", isim: "Cheese Burger", puan: 2.8, yorum: 320, fiyat: "175₺" },
+            { img: "/images/burger/3.webp", isim: "Chedar Burger", puan: 4.7, yorum: 250, fiyat: "150₺" }
         ],
         "French-fries": [
-            { img: "../images/patato/1.png", isim: "Küçük Patates", puan: 4.1, yorum: 210, fiyat: "45₺" },
-            { img: "../images/patato/3.png", isim: "Orta Patates", puan: 4.0, yorum: 320, fiyat: "115₺" },
-            { img: "../images/patato/0.jpg", isim: "Büyük Patates", puan: 3.7, yorum: 270, fiyat: "120₺" }
+            { img: "/images/patato/1.png", isim: "Küçük Patates", puan: 4.1, yorum: 210, fiyat: "45₺" },
+            { img: "/images/patato/3.png", isim: "Orta Patates", puan: 4.0, yorum: 320, fiyat: "115₺" },
+            { img: "/images/patato/0.jpg", isim: "Büyük Patates", puan: 3.7, yorum: 270, fiyat: "120₺" }
         ],
         "Fast-Food": [
-            { img: "../images/fastfood/11.jpg", isim: "Tekno Special", puan: 2.1, yorum: 2110, fiyat: "35₺" },
-            { img: "../images/fastfood/22.jpg ", isim: "Tekno Mega Special", puan: 4.0, yorum: 1220, fiyat: "45₺" },
-            { img: "../images/fastfood/33.jpg", isim: "Tekno Elit Special", puan: 5.7, yorum: 2330, fiyat: "25₺" }],
+            { img: "/images/fastfood/11.jpg", isim: "Tekno Special", puan: 2.1, yorum: 2110, fiyat: "35₺" },
+            { img: "/images/fastfood/22.jpg ", isim: "Tekno Mega Special", puan: 4.0, yorum: 1220, fiyat: "45₺" },
+            { img: "/images/fastfood/33.jpg", isim: "Tekno Elit Special", puan: 5.7, yorum: 2330, fiyat: "25₺" }],
         "Soft-drinks": [
-            { img: "../images/drinks/15.jpg", isim: "Soft-Drinks", puan: 3.1, yorum: 210, fiyat: "25₺" },
-            { img: "../images/drinks/16.jpg", isim: "Ultra-Soft-Drinks", puan: 2.0, yorum: 120, fiyat: "35₺" },
-            { img: "../images/drinks/17.webp", isim: "Mega-Soft-Drinks", puan: 3.7, yorum: 330, fiyat: "15₺" }
+            { img: "/images/drinks/15.jpg", isim: "Soft-Drinks", puan: 3.1, yorum: 210, fiyat: "25₺" },
+            { img: "/images/drinks/16.jpg", isim: "Ultra-Soft-Drinks", puan: 2.0, yorum: 120, fiyat: "35₺" },
+            { img: "/images/drinks/17.webp", isim: "Mega-Soft-Drinks", puan: 3.7, yorum: 330, fiyat: "15₺" }
         ]
 
     };
@@ -91,42 +91,42 @@ function AnaSayfa() {
                         <button className='badge-button'
                             color="white"
                             id="YeniKore">
-                            <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="/images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Yeni Kore
                         </button>
 
                         <button className='badge-button'
                             color="white"
                             id="Pizza">
-                            <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="/images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Pizza
                         </button>
 
                         <button className='badge-button'
                             color="white"
                             id="Burger">
-                            <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="/images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Burger
                         </button>
 
                         <button className='badge-button'
                             color="white"
                             id="Kızartmalar">
-                            <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="/images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Kızartmalar
                         </button>
 
                         <button className='badge-button'
                             color="white"
                             id="FastFood">
-                            <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                            <img src="/images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                             Fast food
                         </button>
 
                         <button className='badge-button'
                             color="white"
                             id="Gazlıİçecek">
-                            <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
+                            <img src="/images/iteration-2-images/icons/6.svg" alt="makarna" />
                             Gazlı İçecek
                         </button>
                     </div>
@@ -174,7 +174,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Ramen" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                <img src="/images/iteration-2-images/icons/1.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Ramen
                             </button>
 
@@ -183,7 +183,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Pizza" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                <img src="/images/iteration-2-images/icons/2.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
                                 Pizza
                             </button>
@@ -193,7 +193,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Burger" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                <img src="/images/iteration-2-images/icons/3.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
                                 Burger
                             </button>
@@ -203,7 +203,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "French-fries" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                <img src="/images/iteration-2-images/icons/4.svg" alt="makarna" style={{ marginRight: "15px" }} />
 
                                 French fries
                             </button>
@@ -213,7 +213,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Fast-Food" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
+                                <img src="/images/iteration-2-images/icons/5.svg" alt="makarna" style={{ marginRight: "15px" }} />
                                 Fast Food
                             </button>
 
@@ -222,7 +222,7 @@ function AnaSayfa() {
                                 className='container-2-button'
                                 style={{ margin: "5px", padding: "10px", backgroundColor: selectedCategory === "Soft-drinks" ? "rgb(255 230 184)" : "white" }}
                             >
-                                <img src="../images/iteration-2-images/icons/6.svg" alt="makarna" />
+                                <img src="/images/iteration-2-images/icons/6.svg" alt="makarna" />
                                 Soft drinks
                             </button>
                         </div>
@@ -277,7 +277,7 @@ function AnaSayfa() {
                         <h2>Teknolojik <br /> Yemekler</h2>
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-1.png"
+                                src="/images/iteration-2-images/footer/icons/icon-1.png"
                                 style={{ marginRight: "10px" }}
                             />
                             341 Londonderr Road, <br /> Istanbul Türkiye
@@ -285,14 +285,14 @@ function AnaSayfa() {
 
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-2.png"
+                                src="/images/iteration-2-images/footer/icons/icon-2.png"
                                 style={{ marginRight: "10px" }}
                             />
                             aciktim@teknolojikyemekler.com
                         </p>
                         <p className="cursor">
                             <img
-                                src="../images/iteration-2-images/footer/icons/icon-3.png"
+                                src="/images/iteration-2-images/footer/icons/icon-3.png"
                                 style={{ marginRight: "10px" }}
                             />
                             +90 216 123 45 67
@@ -323,27 +323,27 @@ function AnaSayfa() {
                         >
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-0.png"
+                                src="/images/iteration-2-images/footer/insta/li-0.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-1.png"
+                                src="/images/iteration-2-images/footer/insta/li-1.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-2.png"
+                                src="/images/iteration-2-images/footer/insta/li-2.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-3.png"
+                                src="/images/iteration-2-images/footer/insta/li-3.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-4.png"
+                                src="/images/iteration-2-images/footer/insta/li-4.png"
                             />
                             <img
                                 className="cursor"
-                                src="../images/iteration-2-images/footer/insta/li-5.png"
+                                src="/images/iteration-2-images/footer/insta/li-5.png"
                             />
                         </div>
                     </div>
